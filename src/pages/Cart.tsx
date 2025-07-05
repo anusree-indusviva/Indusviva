@@ -1,5 +1,4 @@
 // Dependencies
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router";
@@ -31,12 +30,8 @@ import {
 } from "@/components/ui/card";
 
 export default function CheckoutPage() {
-  // On component mount, sync the latest order summary
-  useEffect(() => {
-    syncOrderSummary();
-  }, []);
 
-  // Get cart state and methods from global store
+
   const {
     items: products,
     clearCart,
