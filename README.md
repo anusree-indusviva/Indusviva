@@ -167,23 +167,5 @@ Directory structure:
 
 ---
 
-## 📦 Installation
-
-
-1.npm install
-Start development server
-
-2.npm run dev
-Build for production
-
-3. npm run build
-
-✅ Ensure _redirects file is preserved in /public for SPA support (especially with React Router).
-
-🙌 Author
-Darshan4518 
-
-📄 License
-This project is licensed — feel free to adapt for educational or non-commercial use. For business or production use, please seek permission.
 
 
