@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router";
-import { useCartStore } from "@/stores/useCartStore";
-import { syncOrderSummary } from "@/lib/syncOrderSummary";
 
 interface ProductCardProps {
   id: number;
@@ -28,7 +25,6 @@ function ProductCard({
   benefits,
   usage,
 }: ProductCardProps) {
-  const { addToCart } = useCartStore();
 
   return (
     <motion.div
@@ -51,22 +47,6 @@ function ProductCard({
 
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-        {/* Quick Add Button visible only on hover */}
-        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-          <Button
-            size="sm"
-            className="w-full bg-white/95 backdrop-blur-sm text-gray-800 hover:bg-white border-0 shadow-lg font-medium cursor-pointer"
-            onClick={() => {
-              // Add item to cart and sync order summary
-              addToCart({ id, name, img, price, pv });
-              syncOrderSummary();
-            }}
-          >
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            Quick Add
-          </Button>
-        </div>
       </div>
 
       {/* Product Details */}
