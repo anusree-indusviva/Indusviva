@@ -1,6 +1,8 @@
+import { BASE_URL } from "@/services/api";
 import { useAddressStore } from "@/stores/usAddressStore";
 import { useCartStore } from "@/stores/useCartStore";
 import axios from "axios";
+import { toast } from "sonner";
 
 export const syncOrderSummary = async () => {
   const { items: cartItems, setCartSummary } = useCartStore.getState();
@@ -41,7 +43,7 @@ export const syncOrderSummary = async () => {
 
   try {
     const response = await axios.post(
-      "https://uat-api.machinesarehere.com/sales/v1/website/order-summary",
+      `${BASE_URL}/sales/v1/website/order-summary`,
       payload
     );
     if (response.status === 200) {
@@ -49,6 +51,6 @@ export const syncOrderSummary = async () => {
       setCartSummary(summary);
     }
   } catch (error) {
-    console.error("❌ Order summary failed", error);
+    toast.error("❌ Order summary failed");
   }
 };
