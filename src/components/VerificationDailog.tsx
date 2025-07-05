@@ -17,8 +17,9 @@ import { BASE_URL, signUpCustomer, verifyOtp } from "@/services/api";
 import { useCustomerStore } from "@/stores/useCustomerStore";
 import { useDialogStore } from "@/stores/usedialogStrore";
 import axios from "axios";
+import { useAddressStore } from "@/stores/usAddressStore";
 
-type Step = "mobile" | "otp" | "profile";
+type Step = "pincode" | "mobile" | "otp" | "profile";
 
 interface AlertState {
   show: boolean;
@@ -27,15 +28,17 @@ interface AlertState {
 }
 
 export default function VerificationDialog() {
-   const { isOpen, closeDialog } = useDialogStore();
+  const { isOpen, closeDialog } = useDialogStore();
   const { setCustomerUserId, setCustomerDetails } = useCustomerStore();
+  const { updateAddress } = useAddressStore();
 
   // Form and step control states
-  const [currentStep, setCurrentStep] = useState<Step>("mobile");
+  const [currentStep, setCurrentStep] = useState<Step>("pincode");
   const [mobileNumber, setMobileNumber] = useState("");
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [pincode, setPincode] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState<AlertState>({
     show: false,
@@ -47,7 +50,9 @@ export default function VerificationDialog() {
   const [resendTimer, setResendTimer] = useState(0);
 
   const dialogRef = useRef<HTMLDivElement>(null);
-  const otpRefs = Array.from({ length: 4 }, () => useRef<HTMLInputElement>(null));
+  const otpRefs = Array.from({ length: 4 }, () =>
+    useRef<HTMLInputElement>(null)
+  );
 
   // Automatically dismiss alert after timeout
   useEffect(() => {
@@ -72,7 +77,10 @@ export default function VerificationDialog() {
   // Close dialog on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
+      if (
+        dialogRef.current &&
+        !dialogRef.current.contains(event.target as Node)
+      ) {
         closeDialog();
       }
     };
@@ -103,7 +111,7 @@ export default function VerificationDialog() {
 
   // Reset all dialog states
   const resetDialog = () => {
-    setCurrentStep("mobile");
+    setCurrentStep("pincode");
     setMobileNumber("");
     setOtp(["", "", "", ""]);
     setFullName("");
@@ -120,17 +128,40 @@ export default function VerificationDialog() {
     setTimeout(resetDialog, 300);
   };
 
+  const handlePincodeSubmit = async () => {
+    if (!pincode.trim() || pincode.length !== 6) {
+      return showAlert("error", "Please enter PIN code.");
+    }
+    setIsLoading(true);
+    try {
+      updateAddress({
+        postalcode_id: parseInt(pincode),
+      });
+      setCurrentStep("mobile");
+    } catch {
+      showAlert("error", "Failed to check service availability. Try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   // Trigger phone verification and send OTP
   const handleVerifyPhoneNumber = async () => {
-    if (!mobileNumber.trim()) return showAlert("error", "Please enter a valid mobile number");
-    if (mobileNumber.length < 10) return showAlert("error", "Mobile number must be at least 10 digits");
+    if (!mobileNumber.trim())
+      return showAlert("error", "Please enter a valid mobile number");
+    if (mobileNumber.length < 10)
+      return showAlert("error", "Mobile number must be at least 10 digits");
 
     setIsLoading(true);
     try {
-      const res = await axios.post(`${BASE_URL}/enrollment/phone-verify`, { phone: mobileNumber });
+      const res = await axios.post(`${BASE_URL}/enrollment/phone-verify`, {
+        phone: mobileNumber,
+      });
       if (res.status === 200) {
         showAlert("success", "Phone number verified successfully!");
-        await axios.post(`${BASE_URL}/auth/send-otp-to-customer-phone`, { phone: mobileNumber });
+        await axios.post(`${BASE_URL}/auth/send-otp-to-customer-phone`, {
+          phone: mobileNumber,
+        });
         setCurrentStep("otp");
         setResendTimer(60);
         setCanResendOtp(false);
@@ -139,7 +170,10 @@ export default function VerificationDialog() {
         showAlert("error", "Failed to verify phone number. Please try again.");
       }
     } catch {
-      showAlert("error", "Network error. Please check your connection and try again.");
+      showAlert(
+        "error",
+        "Network error. Please check your connection and try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -156,7 +190,10 @@ export default function VerificationDialog() {
   };
 
   // Handle backspace to focus previous input
-  const handleOtpKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleOtpKeyDown = (
+    index: number,
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
     if (e.key === "Backspace" && index > 0 && otp[index] === "") {
       otpRefs[index - 1].current?.focus();
     }
@@ -165,7 +202,8 @@ export default function VerificationDialog() {
   // Submit and verify OTP
   const handleVerifyOtp = async () => {
     const otpString = otp.join("");
-    if (otpString.length !== 4) return showAlert("error", "Please enter complete OTP");
+    if (otpString.length !== 4)
+      return showAlert("error", "Please enter complete OTP");
 
     setIsLoading(true);
     try {
@@ -173,7 +211,8 @@ export default function VerificationDialog() {
       if (res.status === 200) {
         showAlert("success", "OTP verified successfully!");
         const xAuthHeader = res.headers["x-auth"];
-        if (xAuthHeader) sessionStorage.setItem("x-auth", xAuthHeader as string);
+        if (xAuthHeader)
+          sessionStorage.setItem("x-auth", xAuthHeader as string);
 
         // If customer exists, fetch profile
         if (res.data?.data) {
@@ -194,10 +233,16 @@ export default function VerificationDialog() {
       } else {
         setOtpAttempts((prev) => prev + 1);
         if (otpAttempts >= 3) {
-          showAlert("error", "Maximum attempts reached. Please request a new OTP.");
+          showAlert(
+            "error",
+            "Maximum attempts reached. Please request a new OTP."
+          );
           setCanResendOtp(true);
         } else {
-          showAlert("error", `Invalid OTP. ${3 - otpAttempts} attempts remaining.`);
+          showAlert(
+            "error",
+            `Invalid OTP. ${3 - otpAttempts} attempts remaining.`
+          );
         }
         setOtp(["", "", "", ""]);
         otpRefs[0].current?.focus();
@@ -213,7 +258,9 @@ export default function VerificationDialog() {
   const handleResendOtp = async () => {
     setIsLoading(true);
     try {
-      await axios.post(`${BASE_URL}/auth/send-otp-to-customer-phone`, { mobileNumber });
+      await axios.post(`${BASE_URL}/auth/send-otp-to-customer-phone`, {
+        mobileNumber,
+      });
       setOtpAttempts(0);
       setCanResendOtp(false);
       setResendTimer(30);
@@ -229,15 +276,18 @@ export default function VerificationDialog() {
   // Complete user profile and store authentication
   const handleCompleteProfile = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName.trim() || !email.trim()) return showAlert("error", "Please fill in all required fields");
-    if (!/\S+@\S+\.\S+/.test(email)) return showAlert("error", "Please enter a valid email address");
+    if (!fullName.trim() || !email.trim())
+      return showAlert("error", "Please fill in all required fields");
+    if (!/\S+@\S+\.\S+/.test(email))
+      return showAlert("error", "Please enter a valid email address");
 
     setIsLoading(true);
     try {
       const res = await signUpCustomer(fullName, mobileNumber, email);
       if (res.status === 200) {
         const xAuthHeader = res.headers["x-auth"];
-        if (xAuthHeader) sessionStorage.setItem("x-auth", xAuthHeader as string);
+        if (xAuthHeader)
+          sessionStorage.setItem("x-auth", xAuthHeader as string);
 
         setCustomerUserId(res?.data?.costomer_user_id);
         showAlert("success", "Profile completed successfully!");
@@ -249,6 +299,59 @@ export default function VerificationDialog() {
       setIsLoading(false);
     }
   };
+
+  const renderPincodeStep = () => (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -20 }}
+      className="space-y-4 sm:space-y-6"
+    >
+      <div className="text-center">
+        <h2 className="text-lg sm:text-xl font-semibold">
+          Enter Your PIN Code
+        </h2>
+        <p className="text-gray-500 mt-1 text-sm sm:text-base">
+          Check if we deliver to your location
+        </p>
+      </div>
+
+      <div className="space-y-3 sm:space-y-4">
+        <div>
+          <label
+            htmlFor="pincode"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            PIN Code
+          </label>
+          <Input
+            id="pincode"
+            placeholder="Enter PIN code"
+            value={pincode}
+            onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
+            className="w-full h-11 sm:h-12 text-base"
+            maxLength={6}
+            disabled={isLoading}
+          />
+        </div>
+
+        <Button
+          onClick={handlePincodeSubmit}
+          disabled={isLoading || pincode.length !== 6}
+          className="w-full bg-teal-600 hover:bg-teal-700 text-white h-11 sm:h-12 text-base"
+        >
+          {isLoading ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Checking...
+            </>
+          ) : (
+            "Check Availability"
+          )}
+        </Button>
+      </div>
+    </motion.div>
+  );
 
   const renderMobileStep = () => (
     <motion.div
@@ -570,6 +673,7 @@ export default function VerificationDialog() {
 
                   <div className="p-4 sm:p-6">
                     <AnimatePresence mode="wait">
+                      {currentStep === "pincode" && renderPincodeStep()}
                       {currentStep === "mobile" && renderMobileStep()}
                       {currentStep === "otp" && renderOtpStep()}
                       {currentStep === "profile" && renderProfileStep()}
@@ -578,7 +682,7 @@ export default function VerificationDialog() {
 
                   <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                     <div className="flex justify-center space-x-1 sm:space-x-2">
-                      {["mobile", "otp", "profile"].map((step, index) => (
+                      {["pincode","mobile", "otp", "profile"].map((step, index) => (
                         <div
                           key={step}
                           className={`h-1.5 sm:h-2 w-6 sm:w-8 rounded-full transition-colors ${
