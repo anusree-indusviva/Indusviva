@@ -1,6 +1,5 @@
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router";
-import FooterBrandSlider from "./FooterBrandSlider";
 import FooterCertificateSlider from "./FooterCertificate";
 import logo from "@/assets/img/new/logo.svg";
 
@@ -11,19 +10,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#e6e6e6] text-black py-6 relative z-20">
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Header for Trusted Partners */}
-        <div className="flex flex-col sm:flex-row justify-center items-center my-10 gap-4 text-center">
-          <div className="w-full sm:w-[40%] bg-gray-500/40 h-0.5" />
-          <h2 className="text-base sm:text-lg font-medium">
-            Global Trusted Partner
-          </h2>
-          <div className="w-full sm:w-[40%] bg-gray-500/40 h-0.5" />
-        </div>
-
-        {/* Partner Brands Carousel */}
-        <FooterBrandSlider />
-
         {/* Header for Certification Section */}
         <div className="flex flex-col sm:flex-row justify-center items-center my-10 gap-4 text-center">
           <div className="w-full sm:w-[40%] bg-gray-500/40 h-0.5" />
@@ -53,13 +39,27 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Main Links</h4>
             <ul className="space-y-2 text-gray-900">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About us</Link></li>
-              <li><Link to="/careers">Career</Link></li>
-              <li><Link to="/medical-panel">Medical Panel</Link></li>
-              <li><Link to="/our-products">Our Products</Link></li>
-              <li><Link to="/virtual-office">Virtual Office</Link></li>
-              <li><Link to="/contact-us">Contact Us</Link></li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About us</Link>
+              </li>
+              <li>
+                <Link to="/careers">Career</Link>
+              </li>
+              <li>
+                <Link to="/medical-panel">Medical Panel</Link>
+              </li>
+              <li>
+                <Link to="/our-products">Our Products</Link>
+              </li>
+              <li>
+                <Link to="/virtual-office">Virtual Office</Link>
+              </li>
+              <li>
+                <Link to="/contact-us">Contact Us</Link>
+              </li>
             </ul>
           </div>
 
@@ -67,13 +67,27 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-2 text-gray-900">
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-              <li><Link to="/search-vbos">Search VBOs</Link></li>
-              <li><Link to="/compensation-plan">Compensation Plan</Link></li>
-              <li><Link to="/compliance-documents">Compliance Documents</Link></li>
-              <li><Link to="/service-request">Create Service Request</Link></li>
-              <li><Link to="/track-service">Track Service</Link></li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/faq">FAQ</Link>
+              </li>
+              <li>
+                <Link to="/search-vbos">Search VBOs</Link>
+              </li>
+              <li>
+                <Link to="/compensation-plan">Compensation Plan</Link>
+              </li>
+              <li>
+                <Link to="/compliance-documents">Compliance Documents</Link>
+              </li>
+              <li>
+                <Link to="/service-request">Create Service Request</Link>
+              </li>
+              <li>
+                <Link to="/track-service">Track Service</Link>
+              </li>
             </ul>
           </div>
 
@@ -81,13 +95,62 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Policies</h4>
             <ul className="space-y-2 text-gray-900">
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/02/VBO-Contract-C.pdf" target="_blank">VBO Contract</Link></li>
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/01/Directseller-Application-Form.pdf" target="_blank">VBO Application</Link></li>
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/01/policies-and-procedures.pdf" target="_blank">Policies & Procedures</Link></li>
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/02/Return-Refund-Policy_C.pdf" target="_blank">Return and Refund Policy</Link></li>
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/01/Payment-Mode-Policy-C.pdf" target="_blank">Payment Mode Policy</Link></li>
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/01/Grievance-redressal.pdf" target="_blank">Grievance Redressal</Link></li>
-              <li><Link to="https://indusviva.com/wp-content/uploads/2025/01/Shipment-and-delivery-policy.pdf" target="_blank">Shipment and Delivery</Link></li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/02/VBO-Contract-C.pdf"
+                  target="_blank"
+                >
+                  VBO Contract
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/01/Directseller-Application-Form.pdf"
+                  target="_blank"
+                >
+                  VBO Application
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/01/policies-and-procedures.pdf"
+                  target="_blank"
+                >
+                  Policies & Procedures
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/02/Return-Refund-Policy_C.pdf"
+                  target="_blank"
+                >
+                  Return and Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/01/Payment-Mode-Policy-C.pdf"
+                  target="_blank"
+                >
+                  Payment Mode Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/01/Grievance-redressal.pdf"
+                  target="_blank"
+                >
+                  Grievance Redressal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://indusviva.com/wp-content/uploads/2025/01/Shipment-and-delivery-policy.pdf"
+                  target="_blank"
+                >
+                  Shipment and Delivery
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -120,7 +183,10 @@ export default function Footer() {
             <span className="hidden md:inline">|</span>
             <Link to="/disclaimer">DISCLAIMER</Link>
             <span className="hidden md:inline">|</span>
-            <Link to="https://magicads.ae/indus-viva/assets/img/new/pdf/Terms.pdf" target="_blank">
+            <Link
+              to="https://magicads.ae/indus-viva/assets/img/new/pdf/Terms.pdf"
+              target="_blank"
+            >
               TERMS & CONDITIONS
             </Link>
           </div>
