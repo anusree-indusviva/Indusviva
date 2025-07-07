@@ -60,6 +60,7 @@ export default function Navbar() {
     "Virtual Office",
     "Nutrivigilance",
     "Contact Us",
+    "Business Model",
     "Customer Care",
   ];
 
@@ -76,7 +77,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <div className="relative z-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[90%] h-20 tv:h-30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[95%] h-20 tv:h-30">
           <div className="flex h-16 items-center justify-between tv:h-30">
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
@@ -88,42 +89,44 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <nav className="hidden xl:flex xl:space-x-8 space-x-4">
+            <nav className="hidden xl:flex  items-center justify-evenly w-full p-2">
               {navItems.map((item) =>
                 item === "Our Products" ? (
                   <div className="relative group" key={item}>
                     <Link to={"/our-products"}>
-                      <p className="text-white cursor-pointer transition-colors 3xl:text-xl tv:text-4xl">
+                      <p className="text-white cursor-pointer transition-colors  3xl:text-lg tv:text-4xl">
                         {item}
                       </p>
                     </Link>
 
-                    <div className="absolute -left-5 top-full mt-3 w-[20vw] bg-white text-black shadow-lg rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0 z-50 p-5">
-                      {products.map((product) => (
-                        <Link
-                          key={product.id}
-                          to={`/our-products/product/${product.id}`}
-                          state={{
-                            product: {
-                              name: product?.product_name,
-                              img: product?.thumbnail_url,
-                              price: product?.selling_price,
-                              id: product?.id,
-                              pv: product?.pv,
-                              description: product?.description,
-                              more_info: product?.more_info,
-                              usage: product?.usage,
-                              benefits: product?.benefits,
-                            },
-                          }}
-                          className="block px-4 py-2 hover:bg-gray-100 rounded"
-                        >
-                          <span className="text-black">
-                            {product.product_name}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
+                    {products?.length > 0 && (
+                      <div className="absolute -left-5 top-full mt-3 w-[20vw] bg-white text-black shadow-lg rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0 z-50 p-5">
+                        {products.map((product) => (
+                          <Link
+                            key={product.id}
+                            to={`/our-products/product/${product.id}`}
+                            state={{
+                              product: {
+                                name: product?.product_name,
+                                img: product?.thumbnail_url,
+                                price: product?.selling_price,
+                                id: product?.id,
+                                pv: product?.pv,
+                                description: product?.description,
+                                more_info: product?.more_info,
+                                usage: product?.usage,
+                                benefits: product?.benefits,
+                              },
+                            }}
+                            className="block px-4 py-2 hover:bg-gray-100 rounded"
+                          >
+                            <span className="text-black">
+                              {product.product_name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <Link
@@ -148,14 +151,14 @@ export default function Navbar() {
                 color="white"
               />
               <CartSheet />
-              <Sheet>
-                <SheetTrigger asChild style={{ cursor: "pointer" }}>
+              <Sheet >
+                <SheetTrigger asChild style={{ cursor: "pointer" }} className="xl:hidden">
                   <Menu className="h-7 w-7" color="white" />
                 </SheetTrigger>
 
                 <SheetContent
                   side="right"
-                  className="w-[320px] px-6 pt-6 overflow-y-scroll"
+                  className="w-[320px] px-6 pt-6 overflow-y-scroll "
                 >
                   <div className="flex items-center justify-between mb-8">
                     <img src={logoblack} alt="Logo" className="h-8" />
