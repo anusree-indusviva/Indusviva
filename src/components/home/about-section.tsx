@@ -4,8 +4,8 @@ import bgVideo from "../../assets/img/video/Nature.mp4";
 
 export default function AboutSection() {
   const [ref, inView] = useInView({
-    triggerOnce: true, 
-    threshold: 0.1,   
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   const variants = {
@@ -18,29 +18,41 @@ export default function AboutSection() {
       ref={ref}
       className="relative bg-gray-300/45 min-h-[90vh] overflow-hidden py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-[98%] mx-auto h-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16 mt-10">
+      <div className="max-w-[98%] mx-auto h-full flex flex-col-reverse xl:flex-row items-center justify-between gap-8 lg:gap-16 mt-10">
         {/* Text Content */}
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={variants}
           transition={{ duration: 0.6 }}
-          className="w-full lg:w-[32%] flex flex-col justify-center text-center md:text-left"
+          className="w-full xl:w-[35%] flex flex-col justify-center text-center md:text-left"
         >
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 lg:ml-[10%] text-center lg:text-left">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center">
             ABOUT OUR COMPANY
           </h2>
 
-          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 my-4">
-            We bring the ancient healing power of Salacia reticulata into the modern world.
+          <h3 className="text-lg sm:text-xl md:text-xl font-semibold text-gray-700 my-4">
+            Our Essence in a nutshell We are IndusViva.
           </h3>
 
-          <p className="text-sm sm:text-base xl:text-xl text-gray-600 mb-3 leading-relaxed">
-            First mentioned in the Charaka Samhita around 700 BC, Salacia—also known as Ekanayakam or Saptaranga—has been used in Ayurveda for centuries to naturally support healthy blood sugar levels and manage diabetes.
+          <p className="text-sm sm:text-base xl:text-lg text-gray-600 mb-3 leading-relaxed">
+            We advocate Advanced Ayurveda – an evolved science rooted in
+            tradition, powered by technology. We don’t just talk wellness, we
+            formulate, manufacture, and market scientifically designed products
+            that support holistic well-being, regardless of age.But we go beyond
+            wellness.
           </p>
 
-          <p className="text-sm sm:text-base md:text-xl text-gray-600 leading-relaxed">
-            At IndusViva, we blend this traditional wisdom with modern nutraceutical science to create products that honor both heritage and health.
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+            We create Wellness Entrepreneurs — individuals driven not just by
+            income, but by impact. Through a sustainable and legally compliant
+            direct selling model, IndusViva has been transforming lives and
+            building a movement of purpose-led entrepreneurs across India and
+            beyond.
+          </p>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+            We’re not just building a company. We’re building a legacy — one
+            entrepreneur at a time.
           </p>
         </motion.div>
 
@@ -49,10 +61,10 @@ export default function AboutSection() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={variants}
-          transition={{ duration: 0.6, delay: 0.2 }} 
-          className="w-full lg:w-[68%] flex items-center justify-center"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full xl:w-[65%] flex items-center justify-center"
         >
-          <div className="w-full h-[15.625rem] sm:h-[18.75rem] md:h-[25rem] lg:h-[31.25rem]">
+          <div className="w-full h-[15.625rem] sm:h-[18.75rem] md:h-[25rem] lg:h-[34.25rem]">
             <video
               autoPlay
               muted
