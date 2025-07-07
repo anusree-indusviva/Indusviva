@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 // @ts-expect-error
@@ -53,183 +50,10 @@ const sustainabilityItems = [
 ];
 
 const SustainabilitySection = () => {
-  const sectionRef = useRef(null);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    gsap.set([".section-title", ".section-description"], {
-      opacity: 1,
-      y: 0,
-    });
-
-    const headerTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    headerTl
-      .fromTo(
-        ".section-title",
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".section-description",
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power3.out",
-        },
-        "-=0.4"
-      );
-
-    itemRefs.current.forEach((item, index) => {
-      if (!item) return;
-
-      gsap.set(item, { opacity: 0.2, y: 30, scale: 0.98 });
-
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 90%",
-        end: "bottom 10%",
-        onEnter: () => {
-          gsap.to(item, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.4,
-            ease: "power3.out",
-          });
-
-          itemRefs.current.forEach((otherItem, otherIndex) => {
-            if (otherItem && otherIndex !== index) {
-              gsap.to(otherItem, {
-                opacity: 0,
-                y: -20,
-                scale: 0.98,
-                duration: 0.5,
-                delay: 0.1,
-                ease: "power2.inOut",
-              });
-            }
-          });
-
-          const content = item.querySelector(".item-content");
-          const elements = content?.querySelectorAll(".animate-in");
-
-          if (elements?.length) {
-            gsap.set(elements, { y: 20, opacity: 0 });
-            gsap.to(elements, {
-              y: 0,
-              opacity: 1,
-              stagger: 0.1,
-              duration: 0.5,
-              delay: 0.2,
-              ease: "power2.out",
-            });
-          }
-        },
-        onLeave: () => {
-          gsap.to(item, {
-            opacity: 0,
-            y: -20,
-            scale: 0.98,
-            duration: 0.4,
-            ease: "power2.inOut",
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(item, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.4,
-            ease: "power3.out",
-          });
-
-          itemRefs.current.forEach((otherItem, otherIndex) => {
-            if (otherItem && otherIndex !== index) {
-              gsap.to(otherItem, {
-                opacity: 0,
-                y: 20,
-                scale: 0.98,
-                duration: 0.5,
-                delay: 0.1,
-                ease: "power2.inOut",
-              });
-            }
-          });
-
-          const content = item.querySelector(".item-content");
-          const elements = content?.querySelectorAll(".animate-in");
-
-          if (elements?.length) {
-            gsap.set(elements, { y: -20, opacity: 0 });
-            gsap.to(elements, {
-              y: 0,
-              opacity: 1,
-              stagger: 0.1,
-              duration: 0.5,
-              delay: 0.2,
-              ease: "power2.out",
-            });
-          }
-        },
-        onLeaveBack: () => {
-          gsap.to(item, {
-            opacity: 0,
-            y: 20,
-            scale: 0.98,
-            duration: 0.4,
-            ease: "power2.inOut",
-          });
-        },
-      });
-
-      ScrollTrigger.create({
-        trigger: item,
-        start: "center 60%",
-        end: "center 40%",
-        onEnter: () => {
-          gsap.to(item, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(item, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        },
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
-    <div className="bg-[#088772] min-h-screen" ref={sectionRef}>
+    <div className="bg-[#088772] min-h-screen" >
       <div className="text-center py-20 px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-white section-title">
           Sustainability Initiatives
@@ -240,17 +64,16 @@ const SustainabilitySection = () => {
         </p>
       </div>
 
-      <div className="relative p-3 space-y-10">
-        {sustainabilityItems.map((item, index) => (
+      <div className=" p-3 space-y-10 ">
+        {sustainabilityItems.map((item) => (
           <div
             key={item.id}
-            ref={(el: any) => (itemRefs.current[index] = el)}
-            className="px-2 md:px-4 pb-8"
+            className={`px-2 md:px-4 pb-8 sticky top-[15vh] `}
           >
             <div
               className="bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row items-center 
               h-auto min-h-[80vh] md:min-h-[70vh] lg:max-w-[90%] mx-auto 
-              lg:p-6 p-4 w-full shadow-md md:max-w-[60%]"
+              lg:p-6 p-4 w-full shadow-md md:max-w-[60%] mb-2"
             >
               <div
                 className="p-4 md:p-8 lg:p-10 w-full lg:w-1/2 space-y-2 lg:space-y-4 
