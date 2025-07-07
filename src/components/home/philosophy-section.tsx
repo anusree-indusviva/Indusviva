@@ -14,7 +14,7 @@ export default function PhilosophySection() {
   return (
     <section
       ref={ref}
-      className="relative py-16 md:py-24 bg-white overflow-hidden"
+      className="relative py-16 md:py-24 bg-white overflow-hidden dancing-script-500"
     >
       {/* Background image positioned absolutely */}
       <img

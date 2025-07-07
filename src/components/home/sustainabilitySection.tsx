@@ -53,7 +53,7 @@ const SustainabilitySection = () => {
 
 
   return (
-    <div className="bg-[#088772] min-h-screen" >
+    <div className="bg-[#088772] min-h-screen dancing-script-700" >
       <div className="text-center py-20 px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-white section-title">
           Sustainability Initiatives
@@ -72,7 +72,7 @@ const SustainabilitySection = () => {
           >
             <div
               className="bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row items-center 
-              h-auto min-h-[80vh] md:min-h-[70vh] lg:max-w-[90%] mx-auto 
+              h-auto min-h-[80vh] md:min-h-[50vh] md:h-[65vh] lg:max-w-[90%] mx-auto 
               lg:p-6 p-4 w-full shadow-md md:max-w-[60%] mb-2"
             >
               <div

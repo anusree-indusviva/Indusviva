@@ -7,7 +7,7 @@ import TestimonialsSection from "@/components/home/testimonials-section";
 
 const About = () => {
   return (
-    <div>
+    <div className="dancing-script-600">
       {/* Hero banner image at the top of the About page */}
       <div className="min-h-[50vh] h-[50vh] ">
         <img

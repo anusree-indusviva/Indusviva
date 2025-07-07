@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
   return (
     <section
       ref={ref}
-      className="relative z-10 py-16 md:py-24 bg-gray-50 overflow-hidden"
+      className="relative z-10 py-16 md:py-24 bg-gray-50 overflow-hidden my-soul-regular"
     >
       <img
         src={home5test}

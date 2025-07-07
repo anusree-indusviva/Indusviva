@@ -3,7 +3,7 @@ import NavigationHeroSection from "@/components/NavigationHeroSection";
 
 export default function CustomerSupport() {
   return (
-    <section>
+    <section className="dancing-script-500">
       <NavigationHeroSection title="Customer Care" path="Customer Care" />
       <WeAreHelp />
     </section>

@@ -76,7 +76,7 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative z-20">
+      <div className="relative z-20  julee-regular">
         <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[95%] h-20 tv:h-30">
           <div className="flex h-16 items-center justify-between tv:h-30">
             <div className="flex items-center">

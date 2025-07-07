@@ -20,7 +20,7 @@ export default function NutrivigilancePage() {
   const [activeTab, setActiveTab] = useState("nutrivigilance");
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen exo-2-600 ">
       {/* Top banner image */}
       <div className="min-h-[40vh] sm:min-h-[50vh] h-[40vh] sm:h-[50vh]">
         <img

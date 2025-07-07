@@ -39,7 +39,7 @@ export default function ProductDetailsPage() {
   const [mainImage, setMainImage] = useState(product?.images[0]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-300 via-green-200 to-green-200 relative">
+    <div className="min-h-screen bg-gradient-to-br from-green-300 via-green-200 to-green-200 relative exo-2-300 ">
       <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
           

@@ -1,4 +1,3 @@
-"use client"
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
@@ -11,7 +10,7 @@ export default function ResearchSection() {
   })
 
   return (
-    <section className="relative">
+    <section className="relative exo-2-400">
       <section ref={ref} className="w-full bg-[#0e7f7614] py-16 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
           <div className="flex items-center justify-center">

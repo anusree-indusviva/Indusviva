@@ -4,7 +4,7 @@ import NavigationHeroSection from "@/components/NavigationHeroSection";
 
 const ConactUs = () => {
   return (
-    <section>
+    <section className="euphoria-script-regular ">
       <NavigationHeroSection title="contact us" path="contact us" />
       <ContactForm />
       <BranchOffices />

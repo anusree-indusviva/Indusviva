@@ -36,7 +36,7 @@ interface Product {
 // Skeleton loader for product card while loading
 function ProductCardSkeleton() {
   return (
-    <div className="overflow-hidden rounded-3xl bg-white shadow-lg border border-gray-100">
+    <div className="overflow-hidden rounded-3xl bg-white shadow-lg border border-gray-100 ">
       <div className="aspect-[4/5] bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse" />
       <div className="p-6 space-y-4">
         <div className="space-y-2">
@@ -130,7 +130,7 @@ export default function ProductSection() {
   };
 
   return (
-    <section>
+    <section className=" julee-regular">
       {/* Product Banner */}
       <div className="min-h-[50vh] h-[50vh]">
         <img

@@ -16,7 +16,7 @@ export default function AboutSection() {
   return (
     <section
       ref={ref}
-      className="relative bg-gray-300/45 min-h-[90vh] overflow-hidden py-12 px-4 sm:px-6 lg:px-8"
+      className="relative bg-gray-300/45 min-h-[90vh] overflow-hidden py-12 px-4 sm:px-6 lg:px-8 julee-regular"
     >
       <div className="max-w-[98%] mx-auto h-full flex flex-col-reverse xl:flex-row items-center justify-between gap-8 lg:gap-16 mt-10">
         {/* Text Content */}

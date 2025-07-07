@@ -62,7 +62,7 @@ export default function ProductsSection() {
     <section
       ref={ref}
       id="our-products"
-      className="py-16 md:py-24 bg-white overflow-hidden"
+      className="py-16 md:py-24 bg-white overflow-hidden euphoria-script-regular"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex items-center justify-between ">

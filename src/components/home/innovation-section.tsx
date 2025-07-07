@@ -27,7 +27,7 @@ export default function InnovationSection() {
   return (
     <section
       ref={ref}
-      className="bg-[#0e7f7614] py-16 md:py-24 relative z-10"
+      className="bg-[#0e7f7614] py-16 md:py-24 relative z-10 exo-2-600"
     >
       <div className="container">
         {/* First Content Block */}

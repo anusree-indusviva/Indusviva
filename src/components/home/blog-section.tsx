@@ -37,7 +37,7 @@ export default function BlogSection() {
   });
 
   return (
-    <section ref={ref} className="py-12 md:py-24 bg-white w-full">
+    <section ref={ref} className="py-12 md:py-24 bg-white w-full dancing-script-400">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mb-10 md:mb-12">
