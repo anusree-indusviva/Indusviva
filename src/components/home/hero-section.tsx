@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import mainBg from "@/assets/img/new/main_background.jpeg";
 import home3 from "@/assets/img/new/home-3-hero.png";
+import { Link } from "react-router";
 
 export default function HeroSection() {
   return (
@@ -10,24 +10,23 @@ export default function HeroSection() {
         <div
           className={`absolute inset-0' bg-cover bg-center opacity-70"`}
         ></div>
-        <img src={mainBg} alt="mainBg" className=" w-full h-full" />
+        <img src="./HeroSection.png" alt="mainBg" className=" w-full h-full" />
         <div className="absolute inset-0 bg-gradient-to-r from-teal-900/30 to-teal-800/30"></div>
       </div>
 
-      <div className="container relative z-10 px-4 py-24 sm:px-6 lg:px-8 xl:max-w-[70%] mx-auto  h-full flex items-center my-5"> 
+      <div className="container relative z-10 px-4 py-24 sm:px-6 lg:px-8 xl:max-w-[70%] mx-auto  h-full flex items-center my-5">
         <div className="max-w-4xl 3xl:max-w-full  lg:mx-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl 3xl:text-8xl tv:text-[12rem] ">
-              NURTURING HEALTH <br />
+            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl 3xl:text-8xl tv:text-[12rem] uppercase text-amber-100 dancing-script-600">
+              Where Wellness <br />
               <div className="mt-2 3xl:mt-4  flex gap-2 items-center">
                 <img src={home3} alt="home" className=" w-20 h-20 " />
-                <span>THROUGH</span>
+                <span>Meets Nature</span>
               </div>
-              <span className=" mt-2 3xl:mt-4 block">NATURE'S LEGACY</span>
             </h1>
           </motion.div>
 
@@ -35,11 +34,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 max-w-xl 3xl:max-w-4xl tv:max-w-6xl"
+            className="mt-8 max-w-xl 3xl:max-w-4xl tv:max-w-6xl dancing-script-500"
           >
-            <p className="text-lg text-teal-50 3xl:text-xl tv:text-4xl">
-              We create entrepreneurship. We empower entrepreneurs. We advocate
-              Advanced Ayurveda. We formulate, manufacture and market.
+            <p className="text-lg text-amber-50 3xl:text-xl tv:text-4xl">
+              How would it be if you were to possess robust Wellness and Wealth?
+              IndusViva is driven by the mission to empower human lives. Your
+              empowerment can be an inspiration to millions!
             </p>
           </motion.div>
 
@@ -49,6 +49,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-10"
           >
+            <Link to={"/About"}>
             <Button
               size="lg"
               className="bg-teal-600 hover:bg-teal-700 text-white px-12 py-6 3xl:px-16 3xl:py-8 tv:px-20 tv:py-12 flex items-center justify-center gap-4 3xl:text-xl tv:text-2xl"
@@ -70,6 +71,7 @@ export default function HeroSection() {
                 <path d="m12 5 7 7-7 7" />
               </svg>
             </Button>
+            </Link>
           </motion.div>
         </div>
       </div>
