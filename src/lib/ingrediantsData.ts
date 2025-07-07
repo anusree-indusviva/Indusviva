@@ -31,7 +31,7 @@ export interface IProducts {
 export const products: IProducts[] = [
   {
     id: 1,
-    title: "Sesavita™ – Sesame Seed Extract",
+    title: " Sesame Seed Extract",
     subtitle:
       "Harness the clinically proven power of sesame lignans. Support your heart, liver, immune system, and restful sleep naturally.",
     badge: "100% Herbal | Clinically Backed | Food & Cosmetic Grade",
@@ -47,7 +47,7 @@ export const products: IProducts[] = [
   },
   {
     id: 2,
-    title: "BioTurmin™ – Turmeric Extract",
+    title: " Turmeric Extract",
     subtitle:
       "Harnessing the power of Curcuma longa, BioTurmin offers antioxidant, anti-inflammatory, and antimicrobial benefits with enhanced bioavailability.",
     badge: "100% Natural | Organic Certified | Bio-Emulsion Enhanced",
@@ -65,7 +65,7 @@ export const products: IProducts[] = [
   },
   {
     id: 3,
-    title: "Salcital™ – Salacia Extract",
+    title: " Salacia Extract",
     subtitle:
       "Clinically proven Salacia extract for effective blood sugar and lipid level regulation in individuals with Prediabetes and Hyperlipidemia.",
     badge: "Clinically Validated | 100% Water Soluble | Solvent Free",
@@ -84,7 +84,7 @@ export const products: IProducts[] = [
   },
   {
     id: 4,
-    title: "Bacolive™ – Bacopa Extract",
+    title: " Bacopa Extract",
     subtitle:
       "Unlock your cognitive potential with Bacopa monnieri, a time-tested herb supporting memory, learning, and stress relief.",
     badge: "USP 44 Standard | Ethanol Grade | Scientifically Validated",
@@ -103,7 +103,7 @@ export const products: IProducts[] = [
   },
   {
     id: 5,
-    title: "Boswegex™ – Boswellia Extract",
+    title: " Boswellia Extract",
     subtitle:
       "Enhance bone, respiratory, and skin health with Boswellia serrata, the time-honored Ayurvedic herb.",
     badge:
@@ -122,7 +122,7 @@ export const products: IProducts[] = [
   },
   {
     id: 6,
-    title: "Nufotrim™ – Coleus Extract",
+    title: " Coleus Extract",
     subtitle:
       "Tap into the power of forskolin from Coleus forskohlii to promote fat loss and enhance metabolic health.",
     badge: "Batch Consistency | Forskolin Rich | Naturally Thermogenic",
@@ -139,7 +139,7 @@ export const products: IProducts[] = [
   },
   {
     id: 7,
-    title: "Ashwagex™ – Ashwagandha Extract",
+    title: " Ashwagandha Extract",
     subtitle:
       "Experience ancient Ayurvedic vitality through Ashwagandha’s ability to reduce stress, boost strength, and promote restful sleep.",
     badge:
@@ -158,7 +158,7 @@ export const products: IProducts[] = [
   },
   {
     id: 8,
-    title: "Sennagex™ – Senna Extract",
+    title: " Senna Extract",
     subtitle:
       "Time-tested digestive support using natural Senna glycosides for constipation relief and colon cleansing.",
     badge: "EU Compliant | Ethanol Processed | Innovative Manufacturing",
@@ -176,7 +176,7 @@ export const products: IProducts[] = [
   },
   {
     id: 9,
-    title: "Carogex™ – Beta Carotene from Dunaliella salina",
+    title: " Beta Carotene from Dunaliella salina",
     subtitle:
       "Natural antioxidant-rich beta-carotene from algae to support vision, skin, and immune health.",
     badge: "Algae Derived | Solvent Free | Customizable Grades",
@@ -194,7 +194,7 @@ export const products: IProducts[] = [
   },
   {
     id: 10,
-    title: "Banalife™ – Banaba Leaf Extract",
+    title: " Banaba Leaf Extract",
     subtitle:
       "Promotes blood sugar balance, weight management, and heart health with corosolic acid-rich Banaba.",
     badge: "Vegan | Solvent-Free | Versatile Applications",
@@ -213,7 +213,7 @@ export const products: IProducts[] = [
   },
   {
     id: 11,
-    title: "Chlorobean™ – Green Coffee Bean Extract",
+    title: " Green Coffee Bean Extract",
     subtitle:
       "Harness the antioxidant power of chlorogenic acids for metabolism and stress support.",
     badge: "Caffeine <1% | Polyphenol Rich | Additive-Free",
@@ -230,7 +230,7 @@ export const products: IProducts[] = [
   },
   {
     id: 12,
-    title: "Amlagex™ – Amla Extract",
+    title: " Amla Extract",
     subtitle:
       "India's ancient superfruit, standardized for Vitamin C, supporting immunity, skin, digestion, and organ function.",
     badge: "Solvent Free | Water Dispersible | Cosmetic Friendly",
@@ -251,7 +251,7 @@ export const products: IProducts[] = [
   },
   {
     id: 13,
-    title: "Zinberin™ – Ginger Extract",
+    title: " Ginger Extract",
     subtitle:
       "Timeless digestive and immune support with pure, potent ginger extract.",
     badge: "CO2 Extract | Solvent-Free | Microencapsulated",
@@ -272,7 +272,7 @@ export const products: IProducts[] = [
   },
   {
     id: 14,
-    title: "Rosegex™ – Rosemary Extract",
+    title: "Rosemary Extract",
     subtitle:
       "Brain support, sports recovery, and meat preservation from nature’s antioxidant.",
     badge: "Solvent Free | Beverage Grade | Antioxidant Rich",
@@ -290,7 +290,7 @@ export const products: IProducts[] = [
   },
   {
     id: 15,
-    title: "Alphaberin™ – Berberine Hydrochloride",
+    title: " Berberine Hydrochloride",
     subtitle:
       "Natural metabolic and cardiovascular support powered by Berberis aristata.",
     badge: "Natural Source | 97% Purity | Solvent-Free",
@@ -307,7 +307,7 @@ export const products: IProducts[] = [
   },
   {
     id: 16,
-    title: "BelaFort™ – Terminalia bellirica Extract",
+    title: "Terminalia bellirica Extract",
     subtitle:
       "Supports digestion, liver health, and immunity with potent polyphenols.",
     badge: "Premium Fruit Source | Antioxidant Rich | Metabolic Wellness",

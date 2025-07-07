@@ -1,6 +1,5 @@
 import CompanyValues from "@/components/about/company-values";
 import FaqSection from "@/components/about/faq-section";
-import TeamSection from "@/components/about/team-section";
 import WhoWeAre from "@/components/about/who-we-are";
 import FooterBrandSlider from "@/components/FooterBrandSlider";
 import FooterTextSlider from "@/components/FooterTextSlider";
@@ -23,9 +22,6 @@ const About = () => {
 
       {/* Section showcasing the company's core values */}
       <CompanyValues />
-
-      {/* Section introducing the team members */}
-      <TeamSection />
 
       {/* Section introducing the Brands */}
       <div className=" max-w-[90%] mx-auto pb-20">
