@@ -31,14 +31,14 @@ export default function AboutSection() {
             ABOUT OUR COMPANY
           </h2>
 
-          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 my-4">
+          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 mt-4">
             Our Essence in a nutshell
           </h3>
-          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 my-4">
+          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 ">
            We are IndusViva.
           </h3>
 
-          <p className="text-sm sm:text-base xl:text-sm text-gray-600 mb-3 leading-relaxed">
+          <p className="text-sm sm:text-base xl:text-sm text-gray-600 mb-5 leading-relaxed">
             We advocate Advanced Ayurveda – an evolved science rooted in
             tradition, powered by technology. We don’t just talk wellness, we
             formulate, manufacture, and market scientifically designed products
