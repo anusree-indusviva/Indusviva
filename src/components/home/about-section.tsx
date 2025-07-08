@@ -27,15 +27,18 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="w-full xl:w-[35%] flex flex-col justify-center text-center md:text-left"
         >
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center">
+          <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 text-center">
             ABOUT OUR COMPANY
           </h2>
 
-          <h3 className="text-lg sm:text-xl md:text-xl font-semibold text-gray-700 my-4">
-            Our Essence in a nutshell We are IndusViva.
+          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 my-4">
+            Our Essence in a nutshell
+          </h3>
+          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 my-4">
+           We are IndusViva.
           </h3>
 
-          <p className="text-sm sm:text-base xl:text-lg text-gray-600 mb-3 leading-relaxed">
+          <p className="text-sm sm:text-base xl:text-sm text-gray-600 mb-3 leading-relaxed">
             We advocate Advanced Ayurveda – an evolved science rooted in
             tradition, powered by technology. We don’t just talk wellness, we
             formulate, manufacture, and market scientifically designed products
@@ -43,15 +46,17 @@ export default function AboutSection() {
             wellness.
           </p>
 
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed">
             We create Wellness Entrepreneurs — individuals driven not just by
             income, but by impact. Through a sustainable and legally compliant
             direct selling model, IndusViva has been transforming lives and
             building a movement of purpose-led entrepreneurs across India and
             beyond.
           </p>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed">
             We’re not just building a company. We’re building a legacy — one
+          </p>
+          <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed">
             entrepreneur at a time.
           </p>
         </motion.div>
@@ -64,7 +69,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full xl:w-[65%] flex items-center justify-center"
         >
-          <div className="w-full h-[15.625rem] sm:h-[18.75rem] md:h-[25rem] lg:h-[34.25rem]">
+          <div className="w-full h-[15.625rem] sm:h-[18.75rem] md:h-[25rem] lg:h-[30.25rem]">
             <video
               autoPlay
               muted
