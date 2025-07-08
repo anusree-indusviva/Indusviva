@@ -64,7 +64,7 @@ const SustainabilitySection = () => {
         </p>
       </div>
 
-      <div className=" p-3 space-y-10 ">
+      <div className=" p-3 py-10 ">
         {sustainabilityItems.map((item) => (
           <div
             key={item.id}
