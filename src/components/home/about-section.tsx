@@ -34,7 +34,7 @@ export default function AboutSection() {
           <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 mt-4">
             Our Essence in a nutshell
           </h3>
-          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 ">
+          <h3 className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 mb-3">
            We are IndusViva.
           </h3>
 
@@ -53,7 +53,7 @@ export default function AboutSection() {
             building a movement of purpose-led entrepreneurs across India and
             beyond.
           </p>
-          <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed my-2">
             We’re not just building a company. We’re building a legacy — one
           </p>
           <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed">
