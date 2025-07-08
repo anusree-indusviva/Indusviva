@@ -27,7 +27,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="w-full xl:w-[35%] flex flex-col justify-center text-center md:text-left"
         >
-          <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 text-center mb-3 ml-[6vw]">
+          <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 text-center mb-3 mr-[6vw]">
             ABOUT OUR COMPANY
           </h2>
 
