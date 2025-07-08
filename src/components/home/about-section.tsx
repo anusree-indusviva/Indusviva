@@ -42,7 +42,7 @@ export default function AboutSection() {
             We advocate Advanced Ayurveda – an evolved science rooted in
             tradition, powered by technology. We don’t just talk wellness, we
             formulate, manufacture, and market scientifically designed products
-            that support holistic well-being, regardless of age.But we go beyond
+            that support holistic well-being, regardless of age. But we go beyond
             wellness.
           </p>
 
