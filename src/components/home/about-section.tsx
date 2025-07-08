@@ -27,7 +27,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="w-full xl:w-[35%] flex flex-col justify-center text-center md:text-left"
         >
-          <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 text-center">
+          <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 text-center mb-3">
             ABOUT OUR COMPANY
           </h2>
 
@@ -38,7 +38,7 @@ export default function AboutSection() {
            We are IndusViva.
           </h3>
 
-          <p className="text-sm sm:text-base xl:text-base text-gray-600 mb-5 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-5 leading-relaxed">
             We advocate Advanced Ayurveda – an evolved science rooted in
             tradition, powered by technology. We don’t just talk wellness, we
             formulate, manufacture, and market scientifically designed products
@@ -46,17 +46,17 @@ export default function AboutSection() {
             wellness.
           </p>
 
-          <p className="text-sm sm:text-base md:text-base text-gray-600 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
             We create Wellness Entrepreneurs — individuals driven not just by
             income, but by impact. Through a sustainable and legally compliant
             direct selling model, IndusViva has been transforming lives and
             building a movement of purpose-led entrepreneurs across India and
             beyond.
           </p>
-          <p className="text-sm sm:text-base md:text-base text-gray-600 leading-relaxed my-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed my-2">
             We’re not just building a company. We’re building a legacy —one
           </p>
-          <p className="text-sm sm:text-base md:text-base text-gray-600 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
             entrepreneur at a time.
           </p>
         </motion.div>
