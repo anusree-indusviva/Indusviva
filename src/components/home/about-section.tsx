@@ -54,7 +54,7 @@ export default function AboutSection() {
             beyond.
           </p>
           <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed my-2">
-            We’re not just building a company. We’re building a legacy — one
+            We’re not just building a company. We’re building a legacy —one
           </p>
           <p className="text-sm sm:text-base md:text-sm text-gray-600 leading-relaxed">
             entrepreneur at a time.
