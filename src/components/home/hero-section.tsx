@@ -1,7 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import home3 from "@/assets/img/new/home-3-hero.png";
-import { Link } from "react-router";
 
 export default function HeroSection() {
   return (
@@ -37,42 +35,12 @@ export default function HeroSection() {
             className="mt-8 max-w-xl 3xl:max-w-4xl tv:max-w-6xl dancing-script-500"
           >
             <p className="text-lg text-amber-50 3xl:text-xl tv:text-4xl">
-              How would it be if you were to possess robust Wellness and Wealth?
-              IndusViva is driven by the mission to empower human lives. Your
+              How would it be if you were to possess robust Wellness and Wealth?<br/>
+              IndusViva is driven by the mission to empower human lives.<br/> Your
               empowerment can be an inspiration to millions!
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-10"
-          >
-            <Link to={"/About"}>
-            <Button
-              size="lg"
-              className="bg-teal-600 hover:bg-teal-700 text-white px-12 py-6 3xl:px-16 3xl:py-8 tv:px-20 tv:py-12 flex items-center justify-center gap-4 3xl:text-xl tv:text-2xl"
-            >
-              Discover More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className=" h-10 w-10 -rotate-45"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </Button>
-            </Link>
-          </motion.div>
+         
         </div>
       </div>
     </section>

@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -62,59 +60,32 @@ export default function ProductsSection() {
     <section
       ref={ref}
       id="our-products"
-      className="py-16 md:py-24 bg-white overflow-hidden euphoria-script-regular"
+      className="py-16 md:py-24 bg-stone-100 overflow-hidden euphoria-script-regular"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex items-center justify-between ">
-          <div>
-            <motion.div
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={titleVariants}
-              className="flex items-center gap-2 mb-4"
-            >
-              <div className="w-2 h-2 rounded-full bg-teal-600"></div>
-              <span className="text-teal-600 font-medium">PRODUCTS</span>
-            </motion.div>
-
+        <div className="max-w-[90%] mx-auto ">
+          <div className="">
             <motion.h2
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={titleVariants}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left"
             >
-              FROM NATURE TO YOU
+              FROM NATURE <br /> TO YOU
             </motion.h2>
+          </div>
 
+          <div className=" flex justify-end">
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-6 text-lg text-gray-700 max-w-3xl"
+              className="mt-6 text-lg text-gray-700 max-w-3xl text-start w-full"
             >
               Our products, cater to diverse unmet needs in consumer health.
               Rooted in strong Ayurvedic evidence, these science-driven projects
               undergo constant validation through modern scientific tools.
             </motion.p>
-          </div>
-
-          <div className="hidden md:flex justify-end gap-2 mt-6 ">
-            <Button
-              ref={prevRef}
-              variant="outline"
-              size="icon"
-              className=" border-teal-200 hover:bg-teal-50 hover:border-teal-300 bg-[#5ec199] "
-            >
-              <ArrowLeft className="h-8 w-8 text-teal-700" />
-            </Button>
-            <Button
-              ref={nextRef}
-              variant="outline"
-              size="icon"
-              className=" border-teal-200 hover:bg-teal-50 hover:border-teal-300 bg-[#5ec199]"
-            >
-              <ArrowRight className="h-8 w-8 text-teal-700" />
-            </Button>
           </div>
         </div>
 
@@ -159,13 +130,10 @@ export default function ProductsSection() {
             }}
             className="!pb-14"
           >
-            {products.map((product) => (
+            {products.map((product,ind) => (
               <SwiperSlide key={product?.id}>
                 <Link to={`/ingredients/${product?.id}`} state={product}>
-                  <ProductCard
-                    img={product?.images[0]}
-                    name={product?.title}
-                  />
+                  <ProductCard img={product?.images[0]} name={product?.title} ind={ind} />
                 </Link>
               </SwiperSlide>
             ))}

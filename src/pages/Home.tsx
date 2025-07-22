@@ -1,31 +1,21 @@
 import HeroSection from "@/components/home/hero-section";
-import AboutSection from "@/components/home/about-section";
 import ProductsSection from "@/components/home/products-section";
-import VideosSection from "@/components/home/videos-section";
-import QualitySection from "@/components/home/quality-section";
 import ResearchSection from "@/components/home/research-section";
-import PhilosophySection from "@/components/home/philosophy-section";
-import TestimonialsSection from "@/components/home/testimonials-section";
-import BlogSection from "@/components/home/blog-section";
-import ContactSection from "@/components/home/contact-section";
-import FooterTextSlider from "@/components/FooterTextSlider";
-import SustainabilitySection from "@/components/home/sustainabilitySection";
+import OurEssence from "@/components/home/our-essence";
+import TheIndusVivaEdge from "@/components/home/theIndusVivaEdge";
+import StataticsSection from "@/components/home/statatics-section";
+import NeedAssistance from "@/components/home/needAssistance";
 
 const Home = () => {
   return (
     <section className="">
       <HeroSection />
-      <AboutSection />
-      <SustainabilitySection />
+      <OurEssence/>
+      <TheIndusVivaEdge/>
       <ProductsSection />
-      <QualitySection />
-      <VideosSection />
       <ResearchSection />
-      <PhilosophySection />
-      <TestimonialsSection />
-      <BlogSection />
-      <ContactSection />
-      <FooterTextSlider />
+      <StataticsSection/>   
+      <NeedAssistance/>
     </section>
   );
 };

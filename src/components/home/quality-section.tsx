@@ -25,24 +25,12 @@ export default function QualitySection() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-4xl mx-auto leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-6xl mx-auto leading-tight"
           >
-            At IndusViva, we prioritize safety, efficacy, and quality, ensuring
-            the delivery of top-notch products to society.
+            At IndusViva, we prioritize safety, efficacy, and <br/> quality, ensuring
+            the delivery of top-notch <br/> products to society.
           </motion.h2>
 
-          {/* Animated Subheading/Paragraph */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-6 text-xl text-white/90 max-w-3xl mx-auto"
-          >
-            Adopting the concept of Quality by Design, our products are
-            meticulously crafted based on a thorough assessment of society's
-            wellness needs and the extensive experience of scientists from
-            various wellness sectors.
-          </motion.p>
 
           {/* Animated CTA Button */}
           <motion.div
