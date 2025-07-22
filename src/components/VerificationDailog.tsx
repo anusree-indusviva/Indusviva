@@ -18,7 +18,7 @@ import { useCustomerStore } from "@/stores/useCustomerStore";
 import { useDialogStore } from "@/stores/usedialogStrore";
 import axios from "axios";
 import { useAddressStore } from "@/stores/usAddressStore";
-
+import logo from "@/assets/img/new/logo-black.png";
 type Step = "pincode" | "mobile" | "otp" | "profile";
 
 interface AlertState {
@@ -612,7 +612,7 @@ export default function VerificationDialog() {
                   <div className="flex items-center justify-between p-4 sm:p-6 border-b">
                     <div className="flex items-center space-x-2">
                       <img
-                        src="https://magicads.ae/indus-viva/assets/img/new/logo-black.png"
+                        src={logo}
                         alt="IndusViva Logo"
                         className="h-6 sm:h-8 object-contain"
                       />

@@ -64,7 +64,7 @@ const SustainabilitySection = () => {
         </p>
       </div>
 
-      <div className=" p-3 space-y-10 ">
+      <div className=" p-3 py-10 ">
         {sustainabilityItems.map((item) => (
           <div
             key={item.id}
@@ -73,7 +73,7 @@ const SustainabilitySection = () => {
             <div
               className="bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row items-center 
               h-auto min-h-[80vh] md:min-h-[50vh] md:h-[65vh] lg:max-w-[90%] mx-auto 
-              lg:p-6 p-4 w-full shadow-md md:max-w-[60%] mb-2"
+              lg:p-6 p-4 w-full shadow-md md:max-w-[60%] "
             >
               <div
                 className="p-4 md:p-8 lg:p-10 w-full lg:w-1/2 space-y-2 lg:space-y-4 
