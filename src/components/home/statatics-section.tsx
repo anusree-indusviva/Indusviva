@@ -40,7 +40,7 @@ const StataticsSection = () => {
   return (
     <motion.section
       ref={ref}
-      className="py-16 px-4 bg-gradient-to-r from-teal-800 to-cyan-700 text-white  "
+      className="py-16 px-4 bg-stone-100  "
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -57,13 +57,13 @@ const StataticsSection = () => {
               variants={itemVariants}
               className="space-y-2"
             >
-              <div className="text-5xl font-extrabold text-white">
+              <div className="text-5xl font-extrabold text-green-700">
                 {inView && (
                   <CountUp end={stat.number} duration={3} separator="," />
                 )}
-                <span className="text-teal-200">{stat.suffix}</span>
+                <span className="text-green-800">{stat.suffix}</span>
               </div>
-              <div className="text-cyan-100 text-lg font-medium">
+              <div className="text-gray-800 text-lg font-light">
                 {stat.label}
               </div>
             </motion.div>

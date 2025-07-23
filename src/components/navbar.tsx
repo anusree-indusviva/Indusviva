@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, User } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import logo from "@/assets/img/new/logo.svg";
@@ -9,7 +8,7 @@ import logoblack from "@/assets/img/new/logo-black.png";
 import { useDialogStore } from "@/stores/usedialogStrore";
 import axios from "axios";
 import CartSheet from "./cart/CartSheet";
-
+import navbarImage from "@/assets/img/Main Banner.png";
 interface Product {
   id: string;
   product_name: string;
@@ -24,7 +23,6 @@ interface Product {
 
 export default function Navbar() {
   const { openDialog } = useDialogStore();
-  const [scrolled, setScrolled] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -39,17 +37,7 @@ export default function Navbar() {
       }
     };
 
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
     fetchProducts();
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   const navItems = [
@@ -66,19 +54,22 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "bg-[#62bf9a54] backdrop-blur-xl"
-          : "bg-transparent shadow-xs shadow-gray-100/20"
-      )}
+      className={
+        "fixed top-0 left-0 right-0 z-50  "
+      }
+     
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative z-20  julee-regular">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[95%] h-20 tv:h-30">
-          <div className="flex h-16 items-center justify-between tv:h-30">
+      <div className="relative z-20  julee-regular "  style={{
+        backgroundImage: `url(${navbarImage})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[95%] h-70 tv:h-30 py-3">
+          <div className="flex h-16 items-center justify-between tv:h-30 ">
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
                 <img
@@ -151,8 +142,12 @@ export default function Navbar() {
                 color="white"
               />
               <CartSheet />
-              <Sheet >
-                <SheetTrigger asChild style={{ cursor: "pointer" }} className="xl:hidden">
+              <Sheet>
+                <SheetTrigger
+                  asChild
+                  style={{ cursor: "pointer" }}
+                  className="xl:hidden"
+                >
                   <Menu className="h-7 w-7" color="white" />
                 </SheetTrigger>
 

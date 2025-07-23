@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Link } from "react-router";
+import ImageGallery from "./imageGallery";
 
 const OurEssence = () => {
  
@@ -44,27 +45,7 @@ const OurEssence = () => {
             </h3>
           </motion.div>
 
-          {/* Video */}
-          {/* <motion.div
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={videoVariants}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full"
-          >
-            <div className="w-full aspect-[16/9] rounded-lg overflow-hidden bg-gray-100 shadow-md">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src={bgVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </motion.div> */}
+          <ImageGallery/>
         </div>
 
         {/* Description & CTA */}
@@ -90,7 +71,6 @@ const OurEssence = () => {
             </p>
           </div>
 
-          {/* Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

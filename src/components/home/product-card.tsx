@@ -11,7 +11,7 @@ function ProductCard({
 }) {
   return (
     <motion.div
-      className="relative group overflow-hidden bg-amber-100 rounded-2xl shadow-md p-6"
+      className="relative group overflow-hidden bg-white rounded-2xl shadow-md p-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

@@ -26,7 +26,7 @@ const NeedAssistance = () => {
   };
   return (
     <motion.section
-      className=" px-4 bg-stone-50 py-10"
+      className=" px-4 bg-stone-100 py-10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

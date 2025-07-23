@@ -21,13 +21,13 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-teal-900 text-white py-16 px-4 sm:px-6 md:px-8"
+      className="bg-[#2B2B2B] text-white py-16 px-4 sm:px-6 md:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and Social */}
-          <motion.div variants={itemVariants}>
-            <div className=" w-[10vw] h-[5vh] my-8">
+          <motion.div variants={itemVariants} className=" w-full">
+            <div className=" w-[14vw] h-[8vh] my-8">
               <img src={logo} alt="logo" className=" w-full h-full object-cover" />
             </div>
 
@@ -42,8 +42,8 @@ export default function Footer() {
 
           {/* Footer Links Section */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-semibold mb-3 text-white">Main Links</h4>
-            <ul className="space-y-2 text-teal-100 text-sm">
+            <h4 className="font-bold mb-3 text-white text-xl">Main Links</h4>
+            <ul className="space-y-2 text-gray-100 text-sm">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About us</Link></li>
               <li><Link to="/careers">Career</Link></li>
@@ -55,8 +55,8 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h4 className="font-semibold mb-3 text-white">Quick Links</h4>
-            <ul className="space-y-2 text-teal-100 text-sm">
+            <h4 className="font-bold mb-3 text-white text-xl">Quick Links</h4>
+            <ul className="space-y-2 text-gray-100 text-sm">
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/search-vbos">Search VBOs</Link></li>
@@ -68,8 +68,8 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h4 className="font-semibold mb-3 text-white">Policies</h4>
-            <ul className="space-y-2 text-teal-100 text-sm">
+            <h4 className="font-bold mb-3 text-white text-xl">Policies</h4>
+            <ul className="space-y-2 text-gray-100 text-sm">
               <li>
                 <a
                   href="https://indusviva.com/wp-content/uploads/2025/02/VBO-Contract-C.pdf"

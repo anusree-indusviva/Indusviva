@@ -2,13 +2,12 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 //@ts-ignore
 import "swiper/css";
 //@ts-ignore
 import "swiper/css/navigation";
-//@ts-ignore
-import "swiper/css/pagination";
+
 
 import ProductCard from "./product-card";
 import { Link } from "react-router";
@@ -100,7 +99,7 @@ export default function ProductsSection() {
           />
 
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Navigation, Autoplay]}
             spaceBetween={20}
             autoplay={{
               delay: 1000,

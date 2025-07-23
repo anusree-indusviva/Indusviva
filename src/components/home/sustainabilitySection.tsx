@@ -24,6 +24,7 @@ const sustainabilityItems = [
     id: 1,
     number: "01",
     title: "SUSTAINABLY SOURCED FROM THE HEART OF NATURE",
+    cardTittle:"Science Meets Nature",
     subtitle: "SUSTAINABLY SOURCED FROM THE HEART OF NATURE",
     description:
       "Salacia roots grow in pristine forests, harvested by tribal communities who honor the land's natural balance.",
@@ -33,6 +34,7 @@ const sustainabilityItems = [
     id: 2,
     number: "02",
     title: "ADVANCED EXTRACTION PRESERVES POTENCY",
+    cardTittle:"Global-Grade Safety & Efficacy",
     subtitle: "ADVANCED EXTRACTION PRESERVES POTENCY",
     description:
       "Our state-of-the-art extraction methods ensure maximum retention of the plant's beneficial compounds, delivering superior efficacy in every product.",
@@ -42,6 +44,7 @@ const sustainabilityItems = [
     id: 3,
     number: "03",
     title: "Innovation Meets Tradition",
+    cardTittle:"Ethical & Legal First",
     subtitle: "Salacia roots travel to our state-of-the-art facility",
     description:
       "Salacia roots travel to our state-of-the-art facility, where advanced extraction methods preserve their potency. With a dedicated team ensuring strict quality control, each product undergoes thorough testing for purity and safety.",
