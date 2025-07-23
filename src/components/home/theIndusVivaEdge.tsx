@@ -8,7 +8,6 @@ import image6 from "@/assets/img/6.png";
 import image7 from "@/assets/img/7.png";
 import image8 from "@/assets/img/8.png";
 import image9 from "@/assets/img/9.png";
-import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 // @ts-expect-error
 import "swiper/css";
