@@ -1,20 +1,8 @@
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import needAssImage from "@/assets/img/NeedAssistance.png"
 
 const NeedAssistance = () => {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,7 +21,7 @@ const NeedAssistance = () => {
       variants={containerVariants}
     >
       <div className="max-w-4xl mx-auto">
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="bg-teal-100 rounded-2xl p-8"
         >
@@ -58,7 +46,8 @@ const NeedAssistance = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
+        <img src={needAssImage} alt="banner" className="w-full h-full object-cover mt-10" />
       </div>
     </motion.section>
   );

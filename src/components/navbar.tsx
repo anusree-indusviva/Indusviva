@@ -55,14 +55,14 @@ export default function Navbar() {
   return (
     <motion.header
       className={
-        "fixed top-0 left-0 right-0 z-50  "
+        "fixed top-0 left-0 right-0 z-50 "
       }
      
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative z-20  julee-regular "  style={{
+      <div className="relative z-20 "  style={{
         backgroundImage: `url(${navbarImage})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

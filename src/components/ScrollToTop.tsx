@@ -1,12 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
-/**
- * ScrollToTop Component
- *
- * Automatically scrolls the window to the top whenever the route path (pathname) changes.
- * Improves user experience during navigation by ensuring the user starts at the top of each page.
- */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -17,12 +11,12 @@ const ScrollToTop = () => {
         left: 0,
         behavior: "smooth",
       });
-    }, 0); 
+    }, 0);
 
     return () => clearTimeout(scrollTimeout);
-  }, [pathname])
+  }, [pathname]);
 
-  return null; 
+  return null;
 };
 
 export default ScrollToTop;
