@@ -37,10 +37,10 @@ const OurEssence = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl sm:text-6xl tv:tex font-bold text-gray-900 mb-4">
-              Our Essence <br /> in a nutshell
+            <h2 className="text-3xl sm:text-6xl tv:tex font-bold text-gray-800 mb-4">
+              The Viva  <br /> Portfolio
             </h2>
-            <h3 className="text-xl sm:text-6xl font-semibold text-gray-800 mb-6">
+            <h3 className="text-xl sm:text-4xl font-semibold text-gray-700 mb-6">
               We are IndusViva.
             </h3>
           </motion.div>
@@ -50,25 +50,14 @@ const OurEssence = () => {
 
         {/* Description & CTA */}
         <motion.div variants={itemVariants} className="mt-12 text-center max-w-7xl mx-auto">
-          <div className="space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-            <p>
-              We advocate Advanced Ayurveda — an evolved science rooted in
-              tradition, powered by technology. We don’t just talk wellness,
-              we formulate, manufacture, and market scientifically designed
-              products that support holistic well-being, regardless of age.
-              But we go beyond wellness.
+          <div className="space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed ">
+            <p className=" text-center">
+             IndusViva’s featured products are a result of advanced Ayurvedic research blended with modern nutraceutical innovation. Each formulation is designed to address specific health goals — from iCoffee, which supports healthy sugar balance, to iPulse, a powerful antioxidant-rich fruit blend that promotes immunity and cellular health. iGlow enhances skin vitality from within, iSlim aids in weight management, and iCare supports active aging and vision wellness. 
             </p>
-            <p>
-              We create Wellness Entrepreneurs — individuals driven not just
-              by income, but by impact. Through a sustainable and legally
-              compliant direct selling model, IndusViva has been transforming
-              lives and building a movement of purpose-led entrepreneurs across
-              India and beyond.
+            <p className="text-center">
+               Backed by clinically studied ingredients and produced in our in-house certified facility, these products reflect our commitment to safe, <br/> effective, and targeted wellness solutions for today’s lifestyle needs. 
             </p>
-            <p>
-              We’re not just building a company. We’re building a legacy —
-              one entrepreneur at a time.
-            </p>
+         
           </div>
 
           <motion.div

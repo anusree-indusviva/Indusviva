@@ -76,7 +76,7 @@ const TheIndusVivaEdge = () => {
     {
       id: 3,
       number: "03",
-      cardTittle: "Ethical & Legal First",
+      cardTittle: "Certiefied & Compliant",
       subtitle: "Salacia roots travel to our state-of-the-art facility",
       description:
         "Our processes and products meet stringent GMP, FSSAI, and global compliance standards, reflecting our commitment to regulated, transparent, and trusted wellness solutions. ",
@@ -112,7 +112,7 @@ const TheIndusVivaEdge = () => {
 
   return (
     <motion.section
-      className="py-16 px-4 sm:px-6 md:px-8 bg-black"
+      className="py-16 px-4 sm:px-6 md:px-8 bg-black min-h-screen "
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -129,7 +129,7 @@ const TheIndusVivaEdge = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:mt-40"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:mt-40 "
           variants={containerVariants}
         >
           {sustainabilityItems?.map((item, index) => (
@@ -137,50 +137,52 @@ const TheIndusVivaEdge = () => {
               key={item?.cardTittle}
               variants={cardVariants}
               whileHover="hover"
-              className={` ${
-                index === 1 ? "lg:-mt-20" : index === 2 ? "lg:-mt-40" : ""
+              className={`  ${
+                index === 1 ? "lg:-mt-25" : index === 2 ? "lg:-mt-50" : ""
               }`}
             >
-              <div className=" shadow-lg overflow-hidden rounded-4xl xl:max-w-[16vw]  bg-white w-full ">
-                <div className="w-full h-full flex-col">
+             
+              <div className="w-full 2xl:max-w-[24vw] overflow-hidden rounded-4xl">
+                <div className="relative h-[40vh] overflow-hidden">
                   <img
                     src={item?.images[1] || "/placeholder.svg"}
                     className="w-full h-full object-cover"
                   />
-                  <div className="p-4 sm:p-6 rounded-t-2xl overflow-hidden">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
-                      {item?.cardTittle}
-                    </h3>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                      className="mt-10 w-full flex justify-center"
+                  <div className="absolute bottom-0 left-0 right-0 h-[8vh] bg-white rounded-t-[2rem]"></div>
+                </div>
+                <div className="bg-white p-3 space-y-4 -mt-4 relative z-10 py-10">
+                  <h2 className="text-3xl font-bold text-gray-900 text-center max-w-[80%]">
+                    {item?.cardTittle}
+                  </h2>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="mt-10 w-full flex justify-center"
+                  >
+                    <Button
+                      size="sm"
+                      className="bg-green-800 hover:bg-teal-700 text-white px-12 py-5 3xl:px-12 3xl:py-12 tv:px-15 tv:py-8 flex items-center justify-center gap-4 3xl:text-base tv:text-sm"
+                      onClick={() => handleDialog(item)}
                     >
-                      <Button
-                        size="sm"
-                        className="bg-green-800 hover:bg-teal-700 text-white px-12 py-4 3xl:px-12 3xl:py-5 tv:px-15 tv:py-8 flex items-center justify-center gap-4 3xl:text-xs tv:text-sm"
-                        onClick={() => handleDialog(item)}
+                      Discover More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className=" h-10 w-10 -rotate-45"
                       >
-                        Discover More
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className=" h-10 w-10 -rotate-45"
-                        >
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </Button>
-                    </motion.div>
-                  </div>
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </Button>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import needAssImage from "@/assets/img/NeedAssistance.png"
+import { useNavigate } from "react-router";
 
 const NeedAssistance = () => {
 
+  const router =useNavigate()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -47,7 +49,7 @@ const NeedAssistance = () => {
             </div>
           </div>
         </motion.div> */}
-        <img src={needAssImage} alt="banner" className="w-full h-full object-cover mt-10" />
+        <img src={needAssImage} alt="banner" className="w-full h-full object-cover mt-10" onClick={()=>{router("/contact-us")}} />
       </div>
     </motion.section>
   );
