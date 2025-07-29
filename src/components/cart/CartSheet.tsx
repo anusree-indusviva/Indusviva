@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/sheet";
 import { syncOrderSummary } from "@/lib/syncOrderSummary";
 import { useCartStore } from "@/stores/useCartStore";
-import { ShoppingCart } from "lucide-react";
+import { LucideShoppingBag, ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const CartSheet = () => {
@@ -21,7 +21,7 @@ const CartSheet = () => {
     <Sheet>
       <SheetTrigger asChild className="cursor-pointer">
         <div className="relative">
-          <ShoppingCart className="h-6 w-6" color="white" fill="white" />
+          <LucideShoppingBag className="h-6 w-6" color="white"  />
           {items.length > 0 && (
             <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
               {items.length}

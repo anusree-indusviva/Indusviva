@@ -9,12 +9,17 @@ export default function App() {
   const { customerUserId } = useCustomerStore();
   const { openDialog } = useDialogStore();
 
-  useEffect(() => {
-    const token = sessionStorage.getItem("x-auth");
-    if (!customerUserId || !token) {
+useEffect(() => {
+  const token = sessionStorage.getItem("x-auth");
+
+  if (!customerUserId || !token) {
+    const timeout = setTimeout(() => {
       openDialog();
-    }
-  }, []);
+    }, 3000);
+
+    return () => clearTimeout(timeout); 
+  }
+}, [customerUserId]);
 
   return (
     <ErrorBoundary>
