@@ -37,7 +37,7 @@ const OurEssence = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl sm:text-[5rem] tv:text-9xl font-semibold text-gray-900 mb-4 xl:ml-10">
+            <h2 className="text-3xl sm:text-[4.5rem] tv:text-9xl font-semibold text-gray-900 mb-4 xl:ml-10">
               The Viva  <br /> Portfolio
             </h2>
             <h3 className="text-xl sm:text-5xl font-semibold text-gray-900 mb-6 xl:ml-10">
