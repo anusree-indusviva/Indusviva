@@ -25,7 +25,7 @@ export default function ImageGallery() {
             className={cn(
               "relative rounded-[40px] overflow-hidden cursor-pointer",
               "transition-all duration-500",
-              isActive ? "flex-[3]" : "flex-[0.7]"
+              isActive ? "flex-[5]" : "flex-[0.9]"
             )}
             layout
           >

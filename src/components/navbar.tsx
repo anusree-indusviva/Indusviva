@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Menu, User } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router"; 
 import logo from "@/assets/img/new/logo.svg";
 import logoblack from "@/assets/img/new/logo-black.png";
 import { useDialogStore } from "@/stores/usedialogStrore";
 import axios from "axios";
 import CartSheet from "./cart/CartSheet";
 import navbarImage from "@/assets/img/Main Banner.png";
+
 interface Product {
   id: string;
   product_name: string;
@@ -24,6 +25,7 @@ interface Product {
 export default function Navbar() {
   const { openDialog } = useDialogStore();
   const [products, setProducts] = useState<Product[]>([]);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -54,22 +56,22 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={
-        "fixed top-0 left-0 right-0 z-50 "
-      }
-     
+      className={"fixed top-0 left-0 right-0 z-50"}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative z-20 "  style={{
-        backgroundImage: `url(${navbarImage})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[95%] h-70 tv:h-30 py-3">
-          <div className="flex h-16 items-center justify-between tv:h-30 ">
+      <div
+        className="relative z-20"
+        style={{
+          backgroundImage: `url(${navbarImage})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom",
+        }}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-4 max-w-[95%] h-50 tv:h-30 py-3">
+          <div className="flex h-16 items-center justify-between tv:h-30">
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
                 <img
@@ -80,12 +82,24 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <nav className="hidden xl:flex  items-center justify-evenly w-full p-2">
-              {navItems.map((item) =>
-                item === "Our Products" ? (
+            <nav className="hidden xl:flex items-center justify-evenly w-full p-2">
+              {navItems.map((item) => {
+                const path =
+                  item === "Home"
+                    ? "/"
+                    : `/${item.toLowerCase().replace(/\s+/g, "-")}`;
+                const isActive = location.pathname === path;
+
+                return item === "Our Products" ? (
                   <div className="relative group" key={item}>
-                    <Link to={"/our-products"}>
-                      <p className="text-white cursor-pointer transition-colors  3xl:text-lg tv:text-4xl font-semibold">
+                    <Link to="/our-products">
+                      <p
+                        className={`text-white cursor-pointer transition-colors 3xl:text-lg tv:text-4xl ${
+                          location.pathname.startsWith("/our-products")
+                            ? "font-bold"
+                            : ""
+                        } `}
+                      >
                         {item}
                       </p>
                     </Link>
@@ -122,17 +136,15 @@ export default function Navbar() {
                 ) : (
                   <Link
                     key={item}
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : `/${item.toLowerCase().replace(/\s+/g, "-")}`
-                    }
-                    className="text-white transition-colors 3xl:text-xl tv:text-4xl font-semibold"
+                    to={path}
+                    className={`text-white transition-colors 3xl:text-xl tv:text-4xl ${
+                      isActive ? "font-bold" : ""
+                    } `}
                   >
                     {item}
                   </Link>
-                )
-              )}
+                );
+              })}
             </nav>
 
             <div className="flex items-center space-x-6">
@@ -160,11 +172,23 @@ export default function Navbar() {
                   </div>
 
                   <nav className="space-y-4 xl:hidden flex flex-col">
-                    {navItems.map((item) =>
-                      item === "Our Products" ? (
+                    {navItems.map((item) => {
+                      const path =
+                        item === "Home"
+                          ? "/"
+                          : `/${item.toLowerCase().replace(/\s+/g, "-")}`;
+                      const isActive = location.pathname === path;
+
+                      return item === "Our Products" ? (
                         <div className="relative" key={item}>
-                          <Link to={"/our-products"}>
-                            <span className="text-black cursor-pointer transition-colors 3xl:text-xl tv:text-4xl">
+                          <Link to="/our-products">
+                            <span
+                              className={`text-black cursor-pointer transition-colors 3xl:text-xl tv:text-4xl ${
+                                location.pathname.startsWith("/our-products")
+                                  ? "font-bold"
+                                  : ""
+                              } `}
+                            >
                               {item}
                             </span>
                           </Link>
@@ -172,17 +196,15 @@ export default function Navbar() {
                       ) : (
                         <Link
                           key={item}
-                          to={
-                            item === "Home"
-                              ? "/"
-                              : `/${item.toLowerCase().replace(/\s+/g, "-")}`
-                          }
-                          className="text-black transition-colors 3xl:text-xl tv:text-4xl"
+                          to={path}
+                          className={`text-black transition-colors 3xl:text-xl tv:text-4xl ${
+                            isActive ? "font-bold" : ""
+                          } `}
                         >
                           {item}
                         </Link>
-                      )
-                    )}
+                      );
+                    })}
                   </nav>
 
                   <div className="my-6 border-t pt-4" />

@@ -67,13 +67,13 @@ export default function ProductsSection() {
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={titleVariants}
-              className="text-3xl  lg:text-5xl 2xl:text-6xl font-bold text-gray-900 "
+              className="text-3xl  lg:text-5xl 2xl:text-7xl font-bold text-gray-900 "
             >
               Our Essence in <br /> a Nutshell
             </motion.h2>
           </div>
 
-          <div className=" flex justify-end ">
+          <div className=" flex justify-end mt-3">
             <div className=" xl:max-w-xl">
               <div className="">
                 <motion.h2
@@ -89,12 +89,9 @@ export default function ProductsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="mt-6 text-lg text-gray-700 max-w-3xl text-start w-full"
+                className="mt-6 text-lg text-gray-900 max-w-3xl text-start w-full font-semibold"
               >
-                Our products, cater to diverse unmet needs in consumer health.
-                Rooted in strong Ayurvedic evidence, these science-driven
-                projects undergo constant validation through modern scientific
-                tools.
+                We source nature’s finest botanicals and transform them <br/> through advanced research into clinically crafted wellness <br/> formulations — all under one roof.
               </motion.p>
             </div>
           </div>

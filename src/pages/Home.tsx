@@ -8,7 +8,7 @@ import NeedAssistance from "@/components/home/needAssistance";
 
 const Home = () => {
   return (
-    <section className="">
+    <section className=" overflow-hidden">
       <HeroSection />
       <OurEssence/>
       <TheIndusVivaEdge/>

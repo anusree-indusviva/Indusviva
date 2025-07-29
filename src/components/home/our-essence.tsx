@@ -37,10 +37,10 @@ const OurEssence = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl sm:text-6xl tv:tex font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl sm:text-[5rem] tv:text-9xl font-semibold text-gray-900 mb-4 xl:ml-10">
               The Viva  <br /> Portfolio
             </h2>
-            <h3 className="text-xl sm:text-4xl font-semibold text-gray-700 mb-6">
+            <h3 className="text-xl sm:text-5xl font-semibold text-gray-900 mb-6 xl:ml-10">
               We are IndusViva.
             </h3>
           </motion.div>
@@ -50,7 +50,7 @@ const OurEssence = () => {
 
         {/* Description & CTA */}
         <motion.div variants={itemVariants} className="mt-12 text-center max-w-7xl mx-auto">
-          <div className="space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed ">
+          <div className="space-y-6 text-gray-900 text-base sm:text-lg leading-relaxed font-semibold">
             <p className=" text-center">
              IndusViva’s featured products are a result of advanced Ayurvedic research blended with modern nutraceutical innovation. Each formulation is designed to address specific health goals — from iCoffee, which supports healthy sugar balance, to iPulse, a powerful antioxidant-rich fruit blend that promotes immunity and cellular health. iGlow enhances skin vitality from within, iSlim aids in weight management, and iCare supports active aging and vision wellness. 
             </p>

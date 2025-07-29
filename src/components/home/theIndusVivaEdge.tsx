@@ -120,11 +120,11 @@ const TheIndusVivaEdge = () => {
     >
       <div className=" max-w-[80%] mx-auto">
         <motion.div variants={itemVariants} className="mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-50 mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-bold text-amber-50 mb-3 sm:mb-4">
             The IndusViva Edge
           </h2>
-          <p className="text-amber-50 text-base sm:text-lg">
-            For Your Wellness and Wealth
+          <p className="text-amber-50 text-base sm:text-xl">
+            Your holistic wellbeing is our Priority
           </p>
         </motion.div>
 
