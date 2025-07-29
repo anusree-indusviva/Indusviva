@@ -89,7 +89,7 @@ export default function ProductsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="mt-6 text-lg text-gray-900 max-w-3xl text-start w-full font-semibold"
+                className="mt-6 text-lg text-gray-900 max-w-3xl text-start w-full "
               >
                 We source nature’s finest botanicals and transform them <br/> through advanced research into clinically crafted wellness <br/> formulations — all under one roof.
               </motion.p>
