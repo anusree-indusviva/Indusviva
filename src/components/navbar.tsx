@@ -85,7 +85,7 @@ export default function Navbar() {
                 item === "Our Products" ? (
                   <div className="relative group" key={item}>
                     <Link to={"/our-products"}>
-                      <p className="text-white cursor-pointer transition-colors  3xl:text-lg tv:text-4xl">
+                      <p className="text-white cursor-pointer transition-colors  3xl:text-lg tv:text-4xl font-semibold">
                         {item}
                       </p>
                     </Link>
@@ -127,7 +127,7 @@ export default function Navbar() {
                         ? "/"
                         : `/${item.toLowerCase().replace(/\s+/g, "-")}`
                     }
-                    className="text-white transition-colors 3xl:text-xl tv:text-4xl"
+                    className="text-white transition-colors 3xl:text-xl tv:text-4xl font-semibold"
                   >
                     {item}
                   </Link>

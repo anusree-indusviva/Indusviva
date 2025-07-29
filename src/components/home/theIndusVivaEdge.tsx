@@ -118,7 +118,7 @@ const TheIndusVivaEdge = () => {
       viewport={{ once: true }}
       variants={containerVariants}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className=" max-w-[80%] mx-auto">
         <motion.div variants={itemVariants} className="mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-50 mb-3 sm:mb-4">
             The IndusViva Edge
@@ -129,7 +129,7 @@ const TheIndusVivaEdge = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:mt-40 "
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 lg:mt-40 "
           variants={containerVariants}
         >
           {sustainabilityItems?.map((item, index) => (
@@ -142,7 +142,7 @@ const TheIndusVivaEdge = () => {
               }`}
             >
              
-              <div className="w-full 2xl:max-w-[24vw] overflow-hidden rounded-4xl">
+              <div className="w-full 2xl:max-w-[20vw] 3xl:max-w-[40vw] 3xl:w-[20vw] overflow-hidden rounded-4xl">
                 <div className="relative h-[40vh] overflow-hidden">
                   <img
                     src={item?.images[1] || "/placeholder.svg"}
@@ -150,8 +150,8 @@ const TheIndusVivaEdge = () => {
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-[8vh] bg-white rounded-t-[2rem]"></div>
                 </div>
-                <div className="bg-white p-3 space-y-4 -mt-4 relative z-10 py-10">
-                  <h2 className="text-3xl font-bold text-gray-900 text-center max-w-[80%]">
+                <div className="bg-white p-3 space-y-4 -mt-4 relative z-10 2xl:py-10 py-5">
+                  <h2 className="2xl:text-3xl text-2xl font-bold text-gray-900 text-center ">
                     {item?.cardTittle}
                   </h2>
                   <motion.div
@@ -162,7 +162,7 @@ const TheIndusVivaEdge = () => {
                   >
                     <Button
                       size="sm"
-                      className="bg-green-800 hover:bg-teal-700 text-white px-12 py-5 3xl:px-12 3xl:py-12 tv:px-15 tv:py-8 flex items-center justify-center gap-4 3xl:text-base tv:text-sm"
+                      className="bg-green-800 hover:bg-teal-700 text-white px-12 py-2 3xl:px-12 3xl:py-6 tv:px-15 tv:py-8 flex items-center justify-center gap-4 3xl:text-base tv:text-sm"
                       onClick={() => handleDialog(item)}
                     >
                       Discover More

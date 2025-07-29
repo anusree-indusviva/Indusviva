@@ -39,7 +39,7 @@ export default function ResearchSection() {
           At IndusViva, we prioritize safety, efficacy, and <br/> quality, ensuring
           the delivery of top-notch <br/> products to society.
         </motion.h2>
-        <div className="w-full h-[15.625rem] sm:h-[20.75rem] md:h-[23rem] lg:h-[35.25rem] rounded-xl overflow-hidden mt-20">
+        <div className="w-full h-[12.625rem] sm:h-[18.75rem] md:h-[20rem] lg:h-[32.25rem] rounded-xl overflow-hidden mt-20 max-w-[90%] mx-auto">
           <video
             autoPlay
             muted

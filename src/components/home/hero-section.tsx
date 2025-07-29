@@ -15,7 +15,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <motion.div
-        className="absolute inset-0 z-10 bg-[url('/HeroSection.png')] bg-center"
+        className="absolute inset-0 z-10 bg-[url('/HeroSection.png')] bg-center bg-no-repeat"
         initial={{ scale: 2, x: "30%", y: "10%" }}
         animate={{ scale: 1, x: 0, y: 0 }}
         transition={{

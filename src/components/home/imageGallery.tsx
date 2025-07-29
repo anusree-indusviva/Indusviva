@@ -14,7 +14,7 @@ export default function ImageGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex gap-2 h-[50vh] overflow-hidden px-4">
+    <div className="flex gap-2 h-[25vh] xl:h-[45vh]  tv:max-h-[25vh]  overflow-hidden px-4">
       {images.map((src, index) => {
         const isActive = index === activeIndex;
 
