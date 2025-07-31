@@ -239,11 +239,11 @@ const TheIndusVivaEdge = () => {
                             {selectedItem?.cardTittle}
                           </h2>
                           {selectedItem.id == 3 && (
-                            <h3 className="text-xs md:text-base lg:text-lg 3xl:text-2xl font-medium text-gray-600 animate-in">
+                            <h3 className="text-xs md:text-base lg:text-lg 3xl:text-2xl font-medium text-gray-900 animate-in">
                               {selectedItem?.subtitle}
                             </h3>
                           )}
-                          <p className="text-gray-500 text-sm md:text-sm lg:text-base 3xl:text-xl line-clamp-3 lg:line-clamp-none animate-in">
+                          <p className="text-gray-900 text-sm md:text-sm lg:text-base 3xl:text-xl line-clamp-3 lg:line-clamp-none animate-in">
                             {selectedItem?.description}
                           </p>
                         </div>

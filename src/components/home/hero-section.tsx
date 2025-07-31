@@ -36,7 +36,7 @@ export default function HeroSection() {
               ease: "easeOut",
             }}
           >
-            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-5xl 3xl:text-7xl tv:text-[12rem] text-amber-50 dancing-script-600">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-5xl 3xl:text-7xl tv:text-[12rem] text-amber-50 dancing-script-600 raleway">
               Where Innovation <br />
               <motion.div
                 className="mt-2 3xl:mt-4 flex gap-2 items-center"
