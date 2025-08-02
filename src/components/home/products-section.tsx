@@ -61,7 +61,7 @@ export default function ProductsSection() {
       className="py-16 md:py-24 bg-stone-100 overflow-hidden euphoria-script-regular"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[80%] mx-auto ">
+        <div className="max-w-[75%] mx-auto ">
           <div className="">
             <motion.h2
               initial="hidden"

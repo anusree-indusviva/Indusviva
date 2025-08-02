@@ -96,7 +96,7 @@ export default function Navbar() {
                       <p
                         className={`text-white cursor-pointer transition-colors 3xl:text-lg tv:text-4xl ${
                           location.pathname.startsWith("/our-products")
-                            ? "font-bold"
+                            ? "font-light"
                             : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
                         } `}
                       >
@@ -138,7 +138,7 @@ export default function Navbar() {
                     key={item}
                     to={path}
                     className={`text-white transition-colors 3xl:text-xl tv:text-4xl ${
-                      isActive ? "font-bold" : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
+                      isActive ? "font-light" : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
                     } `}
                   >
                     {item}
@@ -185,8 +185,8 @@ export default function Navbar() {
                             <span
                               className={`text-black cursor-pointer transition-colors 3xl:text-xl tv:text-4xl ${
                                 location.pathname.startsWith("/our-products")
-                                  ? "font-bold"
-                                  : ""
+                                  ? "font-light"
+                                  : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
                               } `}
                             >
                               {item}
@@ -198,7 +198,7 @@ export default function Navbar() {
                           key={item}
                           to={path}
                           className={`text-black transition-colors 3xl:text-xl tv:text-4xl ${
-                            isActive ? "font-bold" : ""
+                            isActive ? "font-light" : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
                           } `}
                         >
                           {item}

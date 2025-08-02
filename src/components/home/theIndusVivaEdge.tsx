@@ -55,15 +55,16 @@ const TheIndusVivaEdge = () => {
     },
   };
   const sustainabilityItems = [
-    {
+     {
       id: 1,
-      number: "01",
-      cardTittle: "Science Meets Nature",
-      subtitle: "SUSTAINABLY SOURCED FROM THE HEART OF NATURE",
+      number: "03",
+      cardTittle: "Certiefied & Compliant",
+      subtitle: "Salacia roots travel to our state-of-the-art facility",
       description:
-        " cutting-edge fusion of Advanced Ayurveda and modern science, leveraging phytoceuticals and clinically backed formulations to deliver balanced, targeted wellness solutions that work at the cellular level. ",
-      images: [image1, image2, image3],
+        "Our processes and products meet stringent GMP, FSSAI, and global compliance standards, reflecting our commitment to regulated, transparent, and trusted wellness solutions. ",
+      images: [image7, image8, image9],
     },
+   
     {
       id: 2,
       number: "02",
@@ -75,12 +76,12 @@ const TheIndusVivaEdge = () => {
     },
     {
       id: 3,
-      number: "03",
-      cardTittle: "Certiefied & Compliant",
-      subtitle: "Salacia roots travel to our state-of-the-art facility",
+      number: "01",
+      cardTittle: "Science Meets Nature",
+      subtitle: "SUSTAINABLY SOURCED FROM THE HEART OF NATURE",
       description:
-        "Our processes and products meet stringent GMP, FSSAI, and global compliance standards, reflecting our commitment to regulated, transparent, and trusted wellness solutions. ",
-      images: [image7, image8, image9],
+        " cutting-edge fusion of Advanced Ayurveda and modern science, leveraging phytoceuticals and clinically backed formulations to deliver balanced, targeted wellness solutions that work at the cellular level. ",
+      images: [image1, image2, image3],
     },
   ];
 
@@ -141,7 +142,6 @@ const TheIndusVivaEdge = () => {
                 index === 1 ? "lg:-mt-25" : index === 2 ? "lg:-mt-50" : ""
               }`}
             >
-             
               <div className="w-full 2xl:max-w-[20vw] 3xl:max-w-[40vw] 3xl:w-[20vw] overflow-hidden rounded-4xl">
                 <div className="relative h-[40vh] overflow-hidden">
                   <img
@@ -238,11 +238,7 @@ const TheIndusVivaEdge = () => {
                           <h2 className="text-sm md:text-lg lg:text-2xl 3xl:text-4xl font-bold text-gray-800 uppercase animate-in">
                             {selectedItem?.cardTittle}
                           </h2>
-                          {selectedItem.id == 3 && (
-                            <h3 className="text-xs md:text-base lg:text-lg 3xl:text-2xl font-medium text-gray-900 animate-in">
-                              {selectedItem?.subtitle}
-                            </h3>
-                          )}
+
                           <p className="text-gray-900 text-sm md:text-sm lg:text-base 3xl:text-xl line-clamp-3 lg:line-clamp-none animate-in">
                             {selectedItem?.description}
                           </p>
