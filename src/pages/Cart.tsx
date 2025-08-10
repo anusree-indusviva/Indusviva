@@ -40,7 +40,6 @@ export default function CheckoutPage() {
     removeFromCart,
   } = useCartStore();
 
-  // Intersection observer to trigger animation when in view
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   // Update quantity logic
@@ -86,7 +85,6 @@ export default function CheckoutPage() {
       ref={ref}
       className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen"
     >
-      {/* Page title and breadcrumb */}
       <NavigationHeroSection title="Cart" path="Cart" />
 
       <div className="py-4 sm:py-6 md:py-8 lg:py-12">
@@ -97,7 +95,6 @@ export default function CheckoutPage() {
             animate={inView ? "visible" : "hidden"}
             className="w-full"
           >
-            {/* Two-column layout: Cart items (left), Address form (right) */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full place-items-baseline">
               
               {/* Order Summary Section */}
@@ -345,7 +342,6 @@ export default function CheckoutPage() {
                         </div>
                       </>
                     ) : (
-                      // Fallback when cart is empty
                       <div className="text-center py-8 sm:py-12">
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}

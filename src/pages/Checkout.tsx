@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-// UI Components
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -10,17 +9,14 @@ import { Package, ArrowRight, AlertCircle, Truck } from "lucide-react";
 import NavigationHeroSection from "@/components/NavigationHeroSection";
 import { OrderConfirmationModal } from "@/components/OrderConfirmationModal";
 
-// Stores
 import { useDialogStore } from "@/stores/usedialogStrore";
 import { useCustomerStore } from "@/stores/useCustomerStore";
 import { useAddressStore } from "@/stores/usAddressStore";
 import { useOrderStore } from "@/stores/useOrderStore";
 import { useCartStore } from "@/stores/useCartStore";
 
-// Utilities
 import { syncOrderSummary } from "@/lib/syncOrderSummary";
 
-// API base URL from env
 const BASE_URL = import.meta.env.VITE_APP_API_URL;
 
 export default function CheckoutPage() {
@@ -221,7 +217,6 @@ export default function CheckoutPage() {
             </div>
           </Button>
 
-          {/* Alert if user missed address or terms */}
           {(!selectedAddress || !termsAccepted) && (
             <div className="flex items-start gap-2 text-xs sm:text-sm text-amber-600 bg-amber-50 p-2 sm:p-3 rounded-lg">
               <AlertCircle className="h-4 w-4 flex-shrink-0 mt-0.5" />

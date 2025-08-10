@@ -9,7 +9,6 @@ import icon4 from "@/assets/img/services/icon-04.png";
 import icon5 from "@/assets/img/services/icon-05.png";
 import icon6 from "@/assets/img/services/icon-06.png";
 
-// Static data for values section
 const values = [
   {
     id: 1,
@@ -66,7 +65,6 @@ export default function CompanyValues() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {/* Section heading animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

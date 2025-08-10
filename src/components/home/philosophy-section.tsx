@@ -16,7 +16,6 @@ export default function PhilosophySection() {
       ref={ref}
       className="relative py-16 md:py-24 bg-white overflow-hidden dancing-script-500"
     >
-      {/* Background image positioned absolutely */}
       <img
         src={aboutbg}
         alt="Decorative background"
@@ -26,7 +25,6 @@ export default function PhilosophySection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Left column - animated image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={
@@ -42,7 +40,6 @@ export default function PhilosophySection() {
             />
           </motion.div>
 
-          {/* Right column - animated text & button */}
           <div className="space-y-6 text-center lg:text-left">
 
             {/* Section Heading */}

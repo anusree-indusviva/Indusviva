@@ -30,7 +30,6 @@ const CartSheet = () => {
         </div>
       </SheetTrigger>
 
-      {/* Sheet content that slides from the side */}
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
@@ -79,7 +78,6 @@ const CartSheet = () => {
                 <span>₹ {total.toFixed(1)}</span>
               </div>
 
-              {/* CTA button to navigate to cart page and sync data */}
               <button
                 className="w-full mt-4 bg-teal-700 text-white py-2 rounded-md hover:bg-teal-800 transition"
                 onClick={() => {

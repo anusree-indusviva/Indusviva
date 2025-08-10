@@ -1,9 +1,6 @@
 import NavigationHeroSection from "@/components/NavigationHeroSection";
 
-/**
- * CSR Policy Page Component
- * Displays the full Corporate Social Responsibility policy of IndusViva
- */
+
 const CsrPolicy = () => {
   return (
     <section>

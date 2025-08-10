@@ -18,7 +18,6 @@ export default function ContactSection() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Section — Heading + Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -28,7 +27,6 @@ export default function ContactSection() {
               Contact Us
             </h2>
 
-            {/* Image with entry animation */}
             <motion.div
               initial={{ opacity: 0, width: "10%" }}
               animate={inView ? { opacity: 1, width: "100%" } : { opacity: 0, width: "10%" }}

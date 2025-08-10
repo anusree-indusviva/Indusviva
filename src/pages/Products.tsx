@@ -7,7 +7,6 @@ import ProductCard from "@/components/products/product-card";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
-// API response interface
 interface ApiProduct {
   id: number;
   product_name: string;
@@ -101,17 +100,14 @@ export default function ProductSection() {
     }
   };
 
-  // Retry handler
   const handleRetry = () => {
     fetchProducts(true);
   };
 
-  // Load products on mount
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  // Framer Motion animation settings
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -217,10 +213,8 @@ export default function ProductSection() {
             )}
           </AnimatePresence>
 
-          {/* Product Cards or Skeleton Loaders */}
           <AnimatePresence mode="wait">
             {loading ? (
-              // Show Skeletons while loading
               <motion.div
                 key="loading"
                 initial={{ opacity: 0 }}
@@ -240,7 +234,6 @@ export default function ProductSection() {
                 ))}
               </motion.div>
             ) : products.length > 0 ? (
-              // Show actual products when loaded
               <motion.div
                 key="products"
                 variants={containerVariants}
@@ -255,7 +248,6 @@ export default function ProductSection() {
                 ))}
               </motion.div>
             ) : !error ? (
-              // Empty state when no products
               <motion.div
                 key="empty"
                 initial={{ opacity: 0 }}

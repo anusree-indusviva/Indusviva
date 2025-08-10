@@ -81,7 +81,6 @@ export default function WhoWeAre() {
                 </p>
               </div>
 
-              {/* Feature Bullets with Animation */}
               <div className="space-y-3 pt-4">
                 {highlights.map((item, index) => (
                   <motion.div

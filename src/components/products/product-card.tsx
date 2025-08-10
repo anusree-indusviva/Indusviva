@@ -61,7 +61,6 @@ function ProductCard({
           </span>
         </div>
 
-        {/* Link to Product Detail Page with full state */}
         <Link
           to={`product/${id}`}
           state={{

@@ -50,7 +50,6 @@ export function OrderConfirmationModal({
     };
   }, [open, onOpenChange]);
 
-  // Builds form data for the payment API request
   const buildFormData = (): FormData => {
     const formData = new FormData();
     const { order_id, order_no, price_details } = order || {};
@@ -101,7 +100,6 @@ export function OrderConfirmationModal({
         }
       );
 
-      // If API returns success and PayU data, store it and move to next step
       if (status === 200 && data?.data?.payu) {
         setPayuObject(data.data.payu);
         setStep(2);
@@ -119,7 +117,6 @@ export function OrderConfirmationModal({
     }
   };
 
-  // Don't render if modal is closed
   if (!open) return null;
 
   return (
@@ -158,7 +155,6 @@ export function OrderConfirmationModal({
               </div>
             </div>
 
-            {/* Body */}
             <div className="px-6 py-6">
               {/* Order Summary */}
               <div className="bg-gray-50 rounded-xl p-4 mb-6">
@@ -182,7 +178,6 @@ export function OrderConfirmationModal({
                 </div>
               </div>
 
-              {/* Step 1: Trigger API */}
               {step === 1 ? (
                 <div className="space-y-4">
                   {apiError && (
@@ -209,7 +204,6 @@ export function OrderConfirmationModal({
                   </Button>
                 </div>
               ) : (
-                // Step 2: Redirect to PayU
                 <form action="https://test.payu.in/_payment" method="post">
                   <input type="hidden" name="key" value={payuObject?.key} />
                   <input type="hidden" name="txnid" value={payuObject?.txnid} />
@@ -260,7 +254,6 @@ export function OrderConfirmationModal({
   );
 }
 
-// Helper component for cleaner layout of order detail rows
 const DetailRow = ({
   label,
   value,

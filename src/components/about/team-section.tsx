@@ -54,7 +54,6 @@ export default function TeamSection() {
   return (
     <section ref={ref} className="py-12 md:py-10 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        {/* Section header animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -83,7 +82,6 @@ export default function TeamSection() {
               variants={itemVariants}
               className="group"
             >
-              {/* Image container with expand animation */}
               <motion.div
                 initial={{ width: "10%" }}
                 animate={inView ? { width: "100%" } : { width: "10%" }}

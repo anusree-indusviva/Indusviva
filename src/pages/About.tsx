@@ -8,7 +8,6 @@ import TestimonialsSection from "@/components/home/testimonials-section";
 const About = () => {
   return (
     <div className="dancing-script-600">
-      {/* Hero banner image at the top of the About page */}
       <div className="min-h-[50vh] h-[50vh] ">
         <img
           src="./About.jpg"
@@ -17,13 +16,10 @@ const About = () => {
         />
       </div>
 
-      {/* Section describing who the company is and what they do */}
       <WhoWeAre />
 
-      {/* Section showcasing the company's core values */}
       <CompanyValues />
 
-      {/* Section introducing the Brands */}
       <div className=" max-w-[90%] mx-auto pb-20">
         <div className="flex flex-col sm:flex-row justify-center items-center my-10 gap-4 text-center">
           <div className="w-full sm:w-[40%] bg-gray-500/40 h-0.5" />
@@ -35,13 +31,10 @@ const About = () => {
         <FooterBrandSlider />
       </div>
 
-      {/* Frequently Asked Questions section */}
       <FaqSection />
 
-      {/* Customer testimonials for building trust and credibility */}
       <TestimonialsSection />
 
-      {/* Animated footer text slider for additional engagement or branding */}
       <FooterTextSlider />
     </div>
   );

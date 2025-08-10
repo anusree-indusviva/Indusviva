@@ -32,7 +32,6 @@ export default function VerificationDialog() {
   const { setCustomerUserId, setCustomerDetails } = useCustomerStore();
   const { updateAddress } = useAddressStore();
 
-  // Form and step control states
   const [currentStep, setCurrentStep] = useState<Step>("pincode");
   const [mobileNumber, setMobileNumber] = useState("");
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -54,7 +53,6 @@ export default function VerificationDialog() {
     useRef<HTMLInputElement>(null)
   );
 
-  // Automatically dismiss alert after timeout
   useEffect(() => {
     if (alert.show) {
       const timer = setTimeout(() => {
@@ -64,7 +62,6 @@ export default function VerificationDialog() {
     }
   }, [alert.show]);
 
-  // Countdown for resend OTP timer
   useEffect(() => {
     if (resendTimer > 0) {
       const timer = setTimeout(() => setResendTimer((prev) => prev - 1), 1000);
@@ -74,7 +71,6 @@ export default function VerificationDialog() {
     }
   }, [resendTimer, currentStep]);
 
-  // Close dialog on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -88,7 +84,6 @@ export default function VerificationDialog() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Close dialog on Escape key press
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeDialog();
@@ -104,12 +99,10 @@ export default function VerificationDialog() {
     };
   }, [isOpen]);
 
-  // Utility to show alert
   const showAlert = (type: AlertState["type"], message: string) => {
     setAlert({ show: true, type, message });
   };
 
-  // Reset all dialog states
   const resetDialog = () => {
     setCurrentStep("pincode");
     setMobileNumber("");
@@ -122,7 +115,6 @@ export default function VerificationDialog() {
     setAlert({ show: false, type: "info", message: "" });
   };
 
-  // Close dialog and reset state
   const handleClose = () => {
     closeDialog();
     setTimeout(resetDialog, 300);
@@ -145,7 +137,6 @@ export default function VerificationDialog() {
     }
   };
 
-  // Trigger phone verification and send OTP
   const handleVerifyPhoneNumber = async () => {
     if (!mobileNumber.trim())
       return showAlert("error", "Please enter a valid mobile number");
@@ -179,7 +170,6 @@ export default function VerificationDialog() {
     }
   };
 
-  // Handle input change in OTP fields
   const handleOtpChange = (index: number, value: string) => {
     if (value.length <= 1 && /^\d*$/.test(value)) {
       const newOtp = [...otp];
@@ -189,7 +179,6 @@ export default function VerificationDialog() {
     }
   };
 
-  // Handle backspace to focus previous input
   const handleOtpKeyDown = (
     index: number,
     e: React.KeyboardEvent<HTMLInputElement>
@@ -199,7 +188,6 @@ export default function VerificationDialog() {
     }
   };
 
-  // Submit and verify OTP
   const handleVerifyOtp = async () => {
     const otpString = otp.join("");
     if (otpString.length !== 4)
@@ -214,7 +202,6 @@ export default function VerificationDialog() {
         if (xAuthHeader)
           sessionStorage.setItem("x-auth", xAuthHeader as string);
 
-        // If customer exists, fetch profile
         if (res.data?.data) {
           const token = sessionStorage.getItem("x-auth");
           const user = await axios.post(
@@ -227,7 +214,6 @@ export default function VerificationDialog() {
           setCustomerDetails(user?.data);
           setTimeout(() => handleClose(), 1000);
         } else {
-          // New customer, move to profile setup
           setTimeout(() => setCurrentStep("profile"), 1000);
         }
       } else {
@@ -254,7 +240,6 @@ export default function VerificationDialog() {
     }
   };
 
-  // Trigger resend OTP action
   const handleResendOtp = async () => {
     setIsLoading(true);
     try {
@@ -273,7 +258,6 @@ export default function VerificationDialog() {
     }
   };
 
-  // Complete user profile and store authentication
   const handleCompleteProfile = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName.trim() || !email.trim())

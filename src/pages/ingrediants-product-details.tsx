@@ -43,14 +43,12 @@ export default function ProductDetailsPage() {
       <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
           
-          {/* Left Section: Product Image & Thumbnails */}
           <motion.div
             variants={scaleIn}
             initial="hidden"
             animate="visible"
             className="w-full md:w-[35%] space-y-3"
           >
-            {/* Main Product Image with transition */}
             <div className="relative group">
               <div className="relative bg-white/40 backdrop-blur-sm border border-white/50 rounded-2xl p-4 shadow-xl">
                 <motion.img
@@ -84,7 +82,6 @@ export default function ProductDetailsPage() {
                     alt={`Thumbnail ${idx + 1}`}
                     className="h-16 w-16 sm:h-20 sm:w-20 object-cover rounded-lg"
                   />
-                  {/* Highlight overlay on selected image */}
                   {mainImage === img && (
                     <div className="absolute inset-0 bg-emerald-500/10 rounded-lg"></div>
                   )}
@@ -93,7 +90,6 @@ export default function ProductDetailsPage() {
             </div>
           </motion.div>
 
-          {/* Right Section: Product Description & Benefits */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -103,7 +99,6 @@ export default function ProductDetailsPage() {
           >
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/50 space-y-3">
               
-              {/* Description Header */}
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-1 h-8 bg-gradient-to-b from-emerald-500 to-teal-500 rounded-full" />
                 <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent">
@@ -111,14 +106,12 @@ export default function ProductDetailsPage() {
                 </h2>
               </div>
 
-              {/* Product Description */}
               <div className="prose max-w-none">
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                   {product?.description}
                 </p>
               </div>
 
-              {/* Key Benefits Section */}
               <motion.div
                 variants={fadeIn}
                 initial="hidden"

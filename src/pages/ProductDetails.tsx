@@ -44,14 +44,12 @@ export default function ProductDetailsPage() {
   );
   const [quantity, setQuantity] = useState<number>(1);
 
-  //  extract product from location state
   useEffect(() => {
     const productFromState = location?.state?.product;
     setProduct(productFromState);
     setMainImage(productFromState?.img);
   }, [location]);
 
-  // Toast notifier with duplicate cart check
   const showAlertToast = (id: number, name: string) => {
     const isExist = items.find((item: any) => item.id === id);
     toast.success(

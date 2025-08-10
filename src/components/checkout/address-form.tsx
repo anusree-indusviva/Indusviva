@@ -207,7 +207,6 @@ export default function AddressForm() {
               />
             </div>
 
-            {/* Auto-filled Location */}
             {formData.city && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>

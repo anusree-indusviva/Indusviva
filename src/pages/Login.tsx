@@ -112,7 +112,6 @@ export default function LoginForm() {
                   className="pr-10 rounded-full"
                   required
                 />
-                {/* Password Visibility Toggle */}
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
