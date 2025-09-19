@@ -4,7 +4,7 @@ import NavigationHeroSection from "@/components/NavigationHeroSection";
 const Careers = () => {
   return (
     <section>
-      <NavigationHeroSection title="Careers" path="Careers" />
+      {/* <NavigationHeroSection title="Careers" path="Careers" /> */}
 
       <JobList />
     </section>
