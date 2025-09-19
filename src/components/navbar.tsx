@@ -45,8 +45,8 @@ export default function Navbar() {
   const navItems = [
     "Home",
     "About",
-    "Careers",
     "Medical Panel",
+    "Our Products",
     "Virtual Office",
     "Nutrivigilance",
     "Contact Us",

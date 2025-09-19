@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-100 text-sm">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About us</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
+              <li><Link to="/careers">Career</Link></li>
               <li><Link to="/medical-panel">Medical Panel</Link></li>
               <li><Link to="/our-products">Our Products</Link></li>
               <li><Link to="/virtual-office">Virtual Office</Link></li>
