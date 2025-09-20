@@ -45,12 +45,9 @@ export default function Navbar() {
   const navItems = [
     "Home",
     "About",
-    "Medical Panel",
+    "Careers",
     "Our Products",
-    "Virtual Office",
-    "Nutrivigilance",
     "Contact Us",
-    "Business Model",
     "Customer Care",
   ];
 
@@ -82,7 +79,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <nav className="hidden xl:flex items-center justify-evenly w-full p-2">
+            <nav className="hidden xl:flex items-center gap-6 w-full justify-end">
               {navItems.map((item) => {
                 const path =
                   item === "Home"
@@ -147,13 +144,7 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="flex items-center space-x-6">
-              <User
-                className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer transition-colors hover:text-gray-300"
-                onClick={openDialog}
-                color="white"
-              />
-              <CartSheet />
+            <div className="flex items-center">
               <Sheet>
                 <SheetTrigger
                   asChild

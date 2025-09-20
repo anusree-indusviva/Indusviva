@@ -50,6 +50,8 @@ export default function Footer() {
               <li><Link to="/medical-panel">Medical Panel</Link></li>
               <li><Link to="/our-products">Our Products</Link></li>
               <li><Link to="/virtual-office">Virtual Office</Link></li>
+              <li><Link to="/nutrivigilance">Nutrivigilance</Link></li>
+              <li><Link to="/business-model">Business Model</Link></li>
               <li><Link to="/contact-us">Contact Us</Link></li>
             </ul>
           </motion.div>

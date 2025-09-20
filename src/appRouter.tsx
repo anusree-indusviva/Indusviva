@@ -38,7 +38,8 @@ const appRouter = createBrowserRouter([
         path: "our-products",
         ...withSuspense(() => import("@/pages/Products")),
       },
-      { path: "careers", ...withSuspense(() => import("@/pages/Careers")) },
+      { path: "careers",
+         ...withSuspense(() => import("@/pages/Careers")) },
       {
         path: "virtual-office",
         ...withSuspense(() => import("@/pages/Login")),
