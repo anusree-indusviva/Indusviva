@@ -23,17 +23,17 @@ const appRouter = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, ...withSuspense(() => import("@/pages/Home")) },
-      { path: "about", ...withSuspense(() => import("@/pages/About")) },
+      { path: "about-us", ...withSuspense(() => import("@/pages/About")) },
       {
         path: "medical-panel",
         ...withSuspense(() => import("@/pages/MedicalPanel")),
       },
 
-      { path: "contact-us", ...withSuspense(() => import("@/pages/ConactUs")) },
-      {
-        path: "customer-care",
-        ...withSuspense(() => import("@/pages/CostumerCare")),
-      },
+      { path: "contact-us", ...withSuspense(() => import("@/pages/ContactUs")) },
+      // {
+      //   path: "customer-care",
+      //   ...withSuspense(() => import("@/pages/CostumerCare")),
+      // },
       {
         path: "our-products",
         ...withSuspense(() => import("@/pages/Products")),
@@ -99,6 +99,10 @@ const appRouter = createBrowserRouter([
       {
         path: "payment/success",
         ...withSuspense(() => import("@/pages/PaymentSuccess")),
+      },
+      {
+        path: "cv",
+        ...withSuspense(() => import("@/pages/Cv")),
       },
       { path: "*", element: <NotFound /> },
     ],

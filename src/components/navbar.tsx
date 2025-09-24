@@ -44,11 +44,11 @@ export default function Navbar() {
 
   const navItems = [
     "Home",
-    "About",
+    "About Us",
     "Careers",
+    "Virtual Office",
     "Our Products",
     "Contact Us",
-    "Customer Care",
   ];
 
   return (
@@ -88,48 +88,17 @@ export default function Navbar() {
                 const isActive = location.pathname === path;
 
                 return item === "Our Products" ? (
-                  <div className="relative group" key={item}>
-                    <Link to="/our-products">
-                      <p
-                        className={`text-white cursor-pointer transition-colors 3xl:text-lg tv:text-4xl ${
-                          location.pathname.startsWith("/our-products")
-                            ? "font-light"
-                            : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
-                        } `}
-                      >
-                        {item}
-                      </p>
-                    </Link>
-
-                    {products?.length > 0 && (
-                      <div className="absolute -left-5 top-full mt-3 w-[20vw] bg-white text-black shadow-lg rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0 z-50 p-5">
-                        {products.map((product) => (
-                          <Link
-                            key={product.id}
-                            to={`/our-products/product/${product.id}`}
-                            state={{
-                              product: {
-                                name: product?.product_name,
-                                img: product?.thumbnail_url,
-                                price: product?.selling_price,
-                                id: product?.id,
-                                pv: product?.pv,
-                                description: product?.description,
-                                more_info: product?.more_info,
-                                usage: product?.usage,
-                                benefits: product?.benefits,
-                              },
-                            }}
-                            className="block px-4 py-2 hover:bg-gray-100 rounded"
-                          >
-                            <span className="text-black">
-                              {product.product_name}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <Link to="/our-products" key={item}>
+                    <p
+                      className={`text-white cursor-pointer transition-colors 3xl:text-lg tv:text-4xl ${
+                        location.pathname.startsWith("/our-products")
+                          ? "font-light"
+                          : " font-light opacity-80 hover:font-medium hover:opacity-100 hover:blur-[0.6px]"
+                      } `}
+                    >
+                      {item}
+                    </p>
+                  </Link>
                 ) : (
                   <Link
                     key={item}

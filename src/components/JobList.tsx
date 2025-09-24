@@ -248,6 +248,7 @@ Qualifications & Experience:
 ];
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function JobList({ filter = "all" }: { filter?: string }) {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -258,22 +259,29 @@ export default function JobList({ filter = "all" }: { filter?: string }) {
     }
 
     return (
-        <div>
+        <motion.div
+            className="grid gap-6 mt-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: {},
+                visible: {
+                    transition: { staggerChildren: 0.12 }
+                }
+            }}
+        >
             {filteredJobs.map((job, index) => {
                 const isOpen = openIndex === index;
                 return (
-                    <div
+                    <motion.div
                         key={job.title}
                         className="bg-white mt-6 mb-6"
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 + index * 0.1 }}
+                        whileHover={{ scale: 1.03 }}
                     >
-                            <div className="p-6">
-                                {/* Top border above first job card, padded up */}
-                                {/* {index === -1 && (
-                                    <div className="pt-2">
-                
-                                        <div className="border-t border-black w-full mb-6" />
-                                    </div>
-                                )} */}
+                        <div className="p-6">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-lg font-semibold text-gray-800">{job.title}</h2>
                                 <div className="flex items-center">
@@ -294,7 +302,7 @@ export default function JobList({ filter = "all" }: { filter?: string }) {
                                         </svg>
                                     </button>
                                     <span className="h-8 border-l border-gray-300 mx-2"></span>
-                                    <button className="bg-green-800 hover:bg-green-900 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors flex items-center">
+                                    <a href="/cv" className="bg-green-800 hover:bg-green-900 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors flex items-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -305,8 +313,8 @@ export default function JobList({ filter = "all" }: { filter?: string }) {
                                         >
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
-                                        Submit Application
-                                    </button>
+                                        Apply Now
+                                    </a>
                                 </div>
                             </div>
                             <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-3 mt-2">
@@ -326,22 +334,26 @@ export default function JobList({ filter = "all" }: { filter?: string }) {
                                     </>
                                 )}
                             </div>
-                            {/* Description stays below, does not shift buttons */}
                             {isOpen && (
-                                <div className="bg-gray-50 p-4 mt-4 border">
+                                <motion.div
+                                    className="bg-gray-50 p-4 mt-4 border"
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.3 }}
+                                >
                                     <pre className="whitespace-pre-wrap text-sm text-gray-700 font-sans leading-relaxed">
                                         {job.description}
                                     </pre>
-                                </div>
+                                </motion.div>
                             )}
-                            {/* Only show bottom border if not last job card */}
                             {index !== filteredJobs.length - 1 && (
                                 <div className="border-b border-black w-full mt-6" />
                             )}
                         </div>
-                    </div>
+                    </motion.div>
                 );
             })}
-        </div>
+        </motion.div>
     );
 }
